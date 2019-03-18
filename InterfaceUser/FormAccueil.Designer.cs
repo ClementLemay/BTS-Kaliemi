@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvVisite = new System.Windows.Forms.DataGridView();
+            this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compte_rendu_infirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbBienvenue1 = new System.Windows.Forms.Label();
@@ -39,13 +46,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compte_rendu_infirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,107 +67,6 @@
             this.dgvVisite.Name = "dgvVisite";
             this.dgvVisite.Size = new System.Drawing.Size(678, 334);
             this.dgvVisite.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dgvVisite);
-            this.panel2.Location = new System.Drawing.Point(172, 52);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 334);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.lbBienvenue1);
-            this.panel3.Controls.Add(this.btParam);
-            this.panel3.Controls.Add(this.btDeconnexion);
-            this.panel3.Location = new System.Drawing.Point(0, -1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(850, 55);
-            this.panel3.TabIndex = 2;
-            // 
-            // lbBienvenue1
-            // 
-            this.lbBienvenue1.AutoSize = true;
-            this.lbBienvenue1.Location = new System.Drawing.Point(32, 18);
-            this.lbBienvenue1.Name = "lbBienvenue1";
-            this.lbBienvenue1.Size = new System.Drawing.Size(35, 13);
-            this.lbBienvenue1.TabIndex = 5;
-            this.lbBienvenue1.Text = "label1";
-            // 
-            // btParam
-            // 
-            this.btParam.Location = new System.Drawing.Point(600, 13);
-            this.btParam.Name = "btParam";
-            this.btParam.Size = new System.Drawing.Size(75, 23);
-            this.btParam.TabIndex = 4;
-            this.btParam.Text = "Paramètre";
-            this.btParam.UseVisualStyleBackColor = true;
-            this.btParam.Click += new System.EventHandler(this.btParam_Click);
-            // 
-            // btDeconnexion
-            // 
-            this.btDeconnexion.Location = new System.Drawing.Point(718, 13);
-            this.btDeconnexion.Name = "btDeconnexion";
-            this.btDeconnexion.Size = new System.Drawing.Size(88, 23);
-            this.btDeconnexion.TabIndex = 3;
-            this.btDeconnexion.Text = "Déconnexion";
-            this.btDeconnexion.UseVisualStyleBackColor = true;
-            this.btDeconnexion.Click += new System.EventHandler(this.btDeconnexion_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(-5, 72);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 51);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Ajouter un compte rendu";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(-5, 120);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 45);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Localition personne";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(-5, 321);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(182, 41);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Exporter";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(-2, 284);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(177, 40);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Importer";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(-5, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ajouter un SoinsVisite";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // IdVisite
             // 
@@ -203,6 +102,143 @@
             // 
             this.compte_rendu_infirmiere.HeaderText = "compte_rendu_infirmiere";
             this.compte_rendu_infirmiere.Name = "compte_rendu_infirmiere";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dgvVisite);
+            this.panel2.Location = new System.Drawing.Point(172, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(678, 334);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.lbBienvenue1);
+            this.panel3.Controls.Add(this.btParam);
+            this.panel3.Controls.Add(this.btDeconnexion);
+            this.panel3.Location = new System.Drawing.Point(0, -1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(850, 55);
+            this.panel3.TabIndex = 2;
+            // 
+            // lbBienvenue1
+            // 
+            this.lbBienvenue1.AutoSize = true;
+            this.lbBienvenue1.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBienvenue1.Location = new System.Drawing.Point(25, 18);
+            this.lbBienvenue1.Name = "lbBienvenue1";
+            this.lbBienvenue1.Size = new System.Drawing.Size(67, 25);
+            this.lbBienvenue1.TabIndex = 5;
+            this.lbBienvenue1.Text = "label1";
+            // 
+            // btParam
+            // 
+            this.btParam.FlatAppearance.BorderSize = 0;
+            this.btParam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btParam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btParam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btParam.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btParam.Location = new System.Drawing.Point(588, 21);
+            this.btParam.Name = "btParam";
+            this.btParam.Size = new System.Drawing.Size(115, 33);
+            this.btParam.TabIndex = 4;
+            this.btParam.Text = "Paramètre";
+            this.btParam.UseVisualStyleBackColor = true;
+            this.btParam.Click += new System.EventHandler(this.btParam_Click);
+            // 
+            // btDeconnexion
+            // 
+            this.btDeconnexion.FlatAppearance.BorderSize = 0;
+            this.btDeconnexion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDeconnexion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeconnexion.Location = new System.Drawing.Point(709, 18);
+            this.btDeconnexion.Name = "btDeconnexion";
+            this.btDeconnexion.Size = new System.Drawing.Size(125, 36);
+            this.btDeconnexion.TabIndex = 3;
+            this.btDeconnexion.Text = "Déconnexion";
+            this.btDeconnexion.UseVisualStyleBackColor = true;
+            this.btDeconnexion.Click += new System.EventHandler(this.btDeconnexion_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(-5, 72);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(182, 51);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Ajouter un compte rendu";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(-5, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(182, 45);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Localition personne";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(-5, 321);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(182, 41);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Exporter";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(-2, 284);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(177, 40);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Importer";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(-5, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 45);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Ajouter un SoinsVisite";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormAccueil
             // 
