@@ -29,17 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbSoins = new System.Windows.Forms.ComboBox();
-            this.cbIdVisite = new System.Windows.Forms.ComboBox();
-            this.cbRealise = new System.Windows.Forms.ComboBox();
-            this.cbPrevu = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgvVisite = new System.Windows.Forms.DataGridView();
-            this.btValider = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libelSoins = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_categ_soins = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +37,16 @@
             this.id_soins = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prevu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbSoins = new System.Windows.Forms.ComboBox();
+            this.cbIdVisite = new System.Windows.Forms.ComboBox();
+            this.cbRealise = new System.Windows.Forms.ComboBox();
+            this.cbPrevu = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btValider = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,58 @@
             this.panel1.Size = new System.Drawing.Size(596, 298);
             this.panel1.TabIndex = 0;
             // 
+            // dgvVisite
+            // 
+            this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdVisite,
+            this.libelSoins,
+            this.id_categ_soins,
+            this.id_type_soins,
+            this.id_soins,
+            this.prevu,
+            this.realise});
+            this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVisite.Location = new System.Drawing.Point(0, 0);
+            this.dgvVisite.Name = "dgvVisite";
+            this.dgvVisite.Size = new System.Drawing.Size(596, 298);
+            this.dgvVisite.TabIndex = 0;
+            // 
+            // IdVisite
+            // 
+            this.IdVisite.HeaderText = "IdVisite";
+            this.IdVisite.Name = "IdVisite";
+            // 
+            // libelSoins
+            // 
+            this.libelSoins.HeaderText = "libelSoins";
+            this.libelSoins.Name = "libelSoins";
+            // 
+            // id_categ_soins
+            // 
+            this.id_categ_soins.HeaderText = "id_categ_soins";
+            this.id_categ_soins.Name = "id_categ_soins";
+            // 
+            // id_type_soins
+            // 
+            this.id_type_soins.HeaderText = "id_type_soins";
+            this.id_type_soins.Name = "id_type_soins";
+            // 
+            // id_soins
+            // 
+            this.id_soins.HeaderText = "id_soins";
+            this.id_soins.Name = "id_soins";
+            // 
+            // prevu
+            // 
+            this.prevu.HeaderText = "prevu";
+            this.prevu.Name = "prevu";
+            // 
+            // realise
+            // 
+            this.realise.HeaderText = "realise";
+            this.realise.Name = "realise";
+            // 
             // cbSoins
             // 
             this.cbSoins.FormattingEnabled = true;
@@ -69,7 +121,6 @@
             this.cbSoins.Name = "cbSoins";
             this.cbSoins.Size = new System.Drawing.Size(121, 21);
             this.cbSoins.TabIndex = 0;
-            this.cbSoins.SelectedIndexChanged += new System.EventHandler(this.cbIdVisite_SelectedIndexChanged);
             // 
             // cbIdVisite
             // 
@@ -78,6 +129,7 @@
             this.cbIdVisite.Name = "cbIdVisite";
             this.cbIdVisite.Size = new System.Drawing.Size(121, 21);
             this.cbIdVisite.TabIndex = 1;
+            this.cbIdVisite.SelectedIndexChanged += new System.EventHandler(this.cbIdVisite_SelectedIndexChanged);
             // 
             // cbRealise
             // 
@@ -102,23 +154,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 4;
-            // 
-            // dgvVisite
-            // 
-            this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdVisite,
-            this.libelSoins,
-            this.id_categ_soins,
-            this.id_type_soins,
-            this.id_soins,
-            this.prevu,
-            this.realise});
-            this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVisite.Location = new System.Drawing.Point(0, 0);
-            this.dgvVisite.Name = "dgvVisite";
-            this.dgvVisite.Size = new System.Drawing.Size(596, 298);
-            this.dgvVisite.TabIndex = 0;
             // 
             // btValider
             // 
@@ -165,41 +200,6 @@
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Realisé :";
-            // 
-            // IdVisite
-            // 
-            this.IdVisite.HeaderText = "IdVisite";
-            this.IdVisite.Name = "IdVisite";
-            // 
-            // libelSoins
-            // 
-            this.libelSoins.HeaderText = "libelSoins";
-            this.libelSoins.Name = "libelSoins";
-            // 
-            // id_categ_soins
-            // 
-            this.id_categ_soins.HeaderText = "id_categ_soins";
-            this.id_categ_soins.Name = "id_categ_soins";
-            // 
-            // id_type_soins
-            // 
-            this.id_type_soins.HeaderText = "id_type_soins";
-            this.id_type_soins.Name = "id_type_soins";
-            // 
-            // id_soins
-            // 
-            this.id_soins.HeaderText = "id_soins";
-            this.id_soins.Name = "id_soins";
-            // 
-            // prevu
-            // 
-            this.prevu.HeaderText = "prevu";
-            this.prevu.Name = "prevu";
-            // 
-            // realise
-            // 
-            this.realise.HeaderText = "realise";
-            this.realise.Name = "realise";
             // 
             // FormAjoutSoinVisite
             // 
