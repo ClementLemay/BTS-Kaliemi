@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.cbNom = new System.Windows.Forms.ComboBox();
+            this.cbNomPersonne = new System.Windows.Forms.ComboBox();
             this.lbAdresse = new System.Windows.Forms.Label();
             this.lbVille = new System.Windows.Forms.Label();
             this.lbCp = new System.Windows.Forms.Label();
@@ -57,13 +57,15 @@
             this.webBrowser1.Size = new System.Drawing.Size(619, 455);
             this.webBrowser1.TabIndex = 0;
             // 
-            // cbNom
+            // cbNomPersonne
             // 
-            this.cbNom.FormattingEnabled = true;
-            this.cbNom.Location = new System.Drawing.Point(46, 39);
-            this.cbNom.Name = "cbNom";
-            this.cbNom.Size = new System.Drawing.Size(121, 21);
-            this.cbNom.TabIndex = 1;
+            this.cbNomPersonne.FormattingEnabled = true;
+            this.cbNomPersonne.Location = new System.Drawing.Point(46, 39);
+            this.cbNomPersonne.Name = "cbNomPersonne";
+            this.cbNomPersonne.Size = new System.Drawing.Size(121, 21);
+            this.cbNomPersonne.TabIndex = 1;
+            this.cbNomPersonne.SelectedIndexChanged += new System.EventHandler(this.cbNomPersonne_SelectedIndexChanged);
+            this.cbNomPersonne.SelectionChangeCommitted += new System.EventHandler(this.cbNomPersonne_SelectedIndexChanged);
             // 
             // lbAdresse
             // 
@@ -100,7 +102,7 @@
             this.Controls.Add(this.lbCp);
             this.Controls.Add(this.lbVille);
             this.Controls.Add(this.lbAdresse);
-            this.Controls.Add(this.cbNom);
+            this.Controls.Add(this.cbNomPersonne);
             this.Controls.Add(this.panel1);
             this.Name = "FormCarte";
             this.Text = "FormCarte";
@@ -114,7 +116,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.ComboBox cbNom;
+        private System.Windows.Forms.ComboBox cbNomPersonne;
         private System.Windows.Forms.Label lbAdresse;
         private System.Windows.Forms.Label lbVille;
         private System.Windows.Forms.Label lbCp;

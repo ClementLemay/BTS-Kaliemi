@@ -15,19 +15,22 @@ namespace InterfaceUser
         public FormCarte()
         {
             InitializeComponent();
-            cbNom.DataSource = Model.GetListNomPersonne();
+            cbNomPersonne.DataSource = Model.GetListNomPersonne();
             StringBuilder queryadress = new StringBuilder();
             queryadress.Append("https://www.google.com/maps?q");
             webBrowser1.Navigate(queryadress + "/");
         }
 
-        private void cbNom_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cbNomPersonne_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string adresse = Model.GetAdresseComplete(cbNom.SelectedText.ToString());
-            lbAdresse.Text = Model.GetAdresse(cbNom.SelectedText.ToString());
-            lbVille.Text = Model.GetVille(cbNom.SelectedText.ToString());
-            lbCp.Text = Model.GetCodePostale(cbNom.SelectedText.ToString());
-            webBrowser1.Navigate("https://www.google.com/maps/place/" + adresse);
+            if (cbNomPersonne.SelectedValue.ToString() != "")
+            {
+                string adresse = Model.GetAdresseComplete(cbNomPersonne.SelectedValue.ToString());
+                lbAdresse.Text = Model.GetAdresse(cbNomPersonne.SelectedValue.ToString());
+                lbVille.Text = Model.GetVille(cbNomPersonne.SelectedValue.ToString());
+                lbCp.Text = Model.GetCodePostale(cbNomPersonne.SelectedValue.ToString());
+                webBrowser1.Navigate("https://www.google.com/maps?q=" + adresse+"/");
+            }
         }
     }
 }
