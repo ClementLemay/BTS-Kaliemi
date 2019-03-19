@@ -15,8 +15,13 @@ namespace InterfaceUser
         int id;
         public FormAjoutSoinVisite(int id)
         {
-            this.id = id;
             InitializeComponent();
+            this.id = id;
+        }
+
+        private void FormAjoutSoinVisite_Load(object sender, EventArgs e)
+        {
+
             cbSoins.DataSource = Model.GetListLibelleSoins();
             cbIdVisite.DataSource = Model.GetListIdVisite(this.id);
             cbRealise.DataSource = new List<string>() { "0", "1" };
@@ -30,13 +35,19 @@ namespace InterfaceUser
                 int idVisite = int.Parse(cbIdVisite.SelectedItem.ToString());
                 int etatPrevu = int.Parse(cbPrevu.SelectedItem.ToString());
                 int etatRealise = int.Parse(cbRealise.SelectedItem.ToString());
+                string labelleSoins = cbSoins.SelectedItem.ToString();
                 if (etatPrevu == 0)
                 {
-                    MessageBox.Show("Un soin imprévu ne peut être non réalisé, par conséquent, réalisé a été définie à 1");
+                    label5.ForeColor = Color.Orange;
+                    label5.Text = "Un soins non-prévu ne peut être non-réaliser, par conséquent il a été modifier à 1";
+                    cbRealise.Text = "1";
+                    DateTime Tthen = DateTime.Now;
+                    do
+                    {
+                        Application.DoEvents();
+                    } while (Tthen.AddSeconds(4) > DateTime.Now);
                     etatRealise = 1;
                 }
-
-                string labelleSoins = cbSoins.SelectedItem.ToString();
 
                 if (Model.addSoinsVisite(idVisite, etatPrevu, etatRealise, labelleSoins))
                 {
@@ -95,11 +106,6 @@ namespace InterfaceUser
                     dgvVisite.Rows.Add(LaVisite);
                 }
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -25,7 +25,7 @@ avertissement 6002: La table/vue 'ppe4.ppe4.administrateur' n'a pas de clé prim
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="libel" Type="nvarchar(max)" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" />
         </EntityType>
@@ -75,7 +75,7 @@ avertissement 6002: La table/vue 'ppe4.ppe4.administrateur' n'a pas de clé prim
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="fichier_photo" Type="nvarchar" MaxLength="250" />
+          <Property Name="fichier_photo" Type="image" />
         </EntityType>
         <EntityType Name="infirmiere_badge">
           <Key>
@@ -726,7 +726,7 @@ avertissement 6002: La table/vue 'ppe4.ppe4.administrateur' n'a pas de clé prim
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="libel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="type_soins" Relationship="ppe4Model.type_soins_type_soins_ibfk_1" FromRole="categ_soins" ToRole="type_soins" />
@@ -782,7 +782,7 @@ avertissement 6002: La table/vue 'ppe4.ppe4.administrateur' n'a pas de clé prim
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="fichier_photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="fichier_photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="indisponibilite" Relationship="ppe4Model.indisponibilite_indisponibilite_ibfk_1" FromRole="infirmiere" ToRole="indisponibilite" />
           <NavigationProperty Name="personne" Relationship="ppe4Model.infirmiere_infirmiere_ibfk_1" FromRole="infirmiere" ToRole="personne" />
           <NavigationProperty Name="infirmiere_badge" Relationship="ppe4Model.infirmiere_badge_infirmiere_badge_ibfk_1" FromRole="infirmiere" ToRole="infirmiere_badge" />
@@ -1206,7 +1206,7 @@ avertissement 6002: La table/vue 'ppe4.ppe4.administrateur' n'a pas de clé prim
           <End Type="ppe4Model.infirmiere" Role="infirmiere" Multiplicity="*" />
           <End Type="ppe4Model.type_soins" Role="type_soins" Multiplicity="*" />
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

@@ -14,58 +14,31 @@ namespace InterfaceUser
 {
     public partial class FormAccueil : Form
     {
-        private delegate void SafeCallDelegate();
+        //private delegate void SafeCallDelegate();
+
+        ClassPersonne Personne;
         Form FormConnexion = new FormConnexion();
-        string NomPrenom;
-        int Id;
 
-        public FormAccueil(Form FormConnexion, string NomPrenom, int unId)
+        public FormAccueil(int unId)
         {
-
             InitializeComponent();
-            this.Id = unId;
-            this.NomPrenom = NomPrenom;
-            lbBienvenue1.Text = "Bienvenue " + NomPrenom;
-            var LQuery = Model.maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == this.Id)
-                            .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
-            foreach (var v in LQuery)
-            {
-                string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
-                dgvVisite.Rows.Add(LaVisite);
-            }
+            this.Personne = new ClassPersonne(unId);
         }
 
-        private void btDeconnexion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormConnexion FormConnexion = new FormConnexion();
-            FormConnexion.ShowDialog();
-            this.Close();
-        }
+        
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+            lbBienvenue1.Text = "Bienvenue " +  Personne.getNom()+ " " + Personne.getPrenom();
+
             var LQuery = Model.maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == Id)
+                            .Where(x => x.infirmiere == Personne.getId())
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
                 string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
-        }
-
-        private void btParam_Click(object sender, EventArgs e)
-        {
-            Form FormParamètre = new FormParamètre(this.Id, this);
-            FormParamètre.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(this.Id);
-            FormCompteRenduVisite.Show();
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -76,9 +49,9 @@ namespace InterfaceUser
             */
             pictureBox1.Visible = true;
             dgvVisite.Rows.Clear();
-            Model.ImportVisite(this.Id);
+            Model.ImportVisite(Personne.getId());
             var LQuery = Model.maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == this.Id)
+                            .Where(x => x.infirmiere == Personne.getId())
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
@@ -110,7 +83,7 @@ namespace InterfaceUser
         */
         private void button2_Click(object sender, EventArgs e)
         {
-            FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(this.Id);
+            FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(Personne.getId());
             FormAjoutSoinVisite.Show();
         }
 
@@ -118,6 +91,24 @@ namespace InterfaceUser
         {
             FormCarte FormCarte = new FormCarte();
             FormCarte.Show();
+        }
+        private void btDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormConnexion FormConnexion = new FormConnexion();
+            FormConnexion.ShowDialog();
+            this.Close();
+        }
+        private void btParam_Click(object sender, EventArgs e)
+        {
+            Form FormParamètre = new FormParamètre(Personne.getId(), this);
+            FormParamètre.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(Personne.getId());
+            FormCompteRenduVisite.Show();
         }
     }
 }

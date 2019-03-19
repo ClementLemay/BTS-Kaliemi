@@ -111,6 +111,7 @@
     <Compile Include="chambre_forte.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassPersonne.cs" />
     <Compile Include="convalescence.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -149,6 +150,12 @@
     </Compile>
     <Compile Include="FormErreur.Designer.cs">
       <DependentUpon>FormErreur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImage.Designer.cs">
+      <DependentUpon>FormImage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormParamètre.cs">
       <SubType>Form</SubType>
@@ -230,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormErreur.resx">
       <DependentUpon>FormErreur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImage.resx">
+      <DependentUpon>FormImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormParamètre.resx">
       <DependentUpon>FormParamètre.cs</DependentUpon>

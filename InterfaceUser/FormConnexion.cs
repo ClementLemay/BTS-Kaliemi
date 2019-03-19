@@ -29,11 +29,11 @@ namespace InterfaceUser
             {
                 if (Model.connexionLocal(tbId.Text, tbMdp1.Text) != true)
                 {
-                    if (Model.connexionWebService(tbId.Text, tbMdp1.Text) && Model.existLogin(tbId.Text) != true)
+                    if (Model.existLogin(tbId.Text) != true && Model.connexionWebService(tbId.Text, tbMdp1.Text) )
                     {
                         Model.upDateConnexion(tbId.Text);
                         this.Hide();
-                        FormAccueil accueil = new FormAccueil(this, Model.GetNomPrenom(tbId.Text), Model.GetIdPersonneFromLogin(tbId.Text));
+                        FormAccueil accueil = new FormAccueil(Model.GetIdPersonneFromLogin(tbId.Text));
                         accueil.ShowDialog();
                         this.Close();
                     }
@@ -51,7 +51,7 @@ namespace InterfaceUser
                 {
                     Model.upDateConnexion(tbId.Text);
                     this.Hide();
-                    FormAccueil accueil = new FormAccueil(this, Model.GetNomPrenom(tbId.Text), Model.GetIdPersonneFromLogin(tbId.Text));
+                    FormAccueil accueil = new FormAccueil(Model.GetIdPersonneFromLogin(tbId.Text));
                     accueil.ShowDialog();
                     this.Close();
                 }

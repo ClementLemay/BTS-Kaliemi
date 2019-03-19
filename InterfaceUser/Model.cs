@@ -82,7 +82,11 @@ namespace InterfaceUser
                                 .Select(x => new { x.login });
                 foreach (var v in LQuery)
                 {
-                    vretour = true;
+                    if(v.login == login)
+                    {
+                        vretour = true;
+                    }
+                    
                 }
             }
             catch (Exception)
@@ -96,15 +100,29 @@ namespace InterfaceUser
         /// Methodes de type GET
         /// 
         /// 
-        public static string GetIdPersonneFromNom(string nom)
+
+        public static string GetNomPersonneFromId(int id)
         {
             string vretour = "";
             var LQuery = maConnexion.personne.ToList()
-                           .Where(x => x.nom == nom)
-                           .Select(x => new { x.id });
+                           .Where(x => x.id == id)
+                           .Select(x => new { x.nom });
             foreach (var v in LQuery)
             {
-                vretour = v.id.ToString();
+                vretour = v.nom.ToString();
+            }
+            return vretour;
+        }
+
+        public static string GetPrenomPersonneFromId(int id)
+        {
+            string vretour = "";
+            var LQuery = maConnexion.personne.ToList()
+                           .Where(x => x.id == id)
+                           .Select(x => new { x.prenom });
+            foreach (var v in LQuery)
+            {
+                vretour = v.prenom.ToString();
             }
             return vretour;
         }
@@ -158,27 +176,6 @@ namespace InterfaceUser
                             .Select(x => new { x.id })
                             .Count();
             vretour += 1;
-            return vretour;
-        }
-
-        public static string GetNomPrenom(string login)
-        {
-            string vretour = "";
-            var LQuery1 = maConnexion.personne_login.ToList()
-                            .Where(x => x.login == login)
-                            .Select(y => new { y.id });
-
-            foreach (var y in LQuery1)
-            {
-                var LQuery2 = maConnexion.personne.ToList()
-                                .Where(x => x.id == y.id)
-                                .Select(x => new { x.nom, x.prenom });
-                foreach (var x in LQuery2)
-                {
-                    vretour = x.nom + " " + x.prenom;
-                }
-            }
-
             return vretour;
         }
 
@@ -443,9 +440,9 @@ namespace InterfaceUser
                 }
                 catch (Exception ex)
                 {
-                    /*System.Windows.Forms.MessageBox.Show(ex.InnerException.Message + " PERSONNE ");
+                    //System.Windows.Forms.MessageBox.Show(ex.InnerException.Message + " PERSONNE ");
                     maConnexion.Dispose();
-                    init();*/
+                    init();
                 }
             }
             return true;

@@ -32,5 +32,17 @@ namespace InterfaceUser.Properties {
                 return ((string)(this["ppe4ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowDrop {
+            get {
+                return ((bool)(this["AllowDrop"]));
+            }
+            set {
+                this["AllowDrop"] = value;
+            }
+        }
     }
 }

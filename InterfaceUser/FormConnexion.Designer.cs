@@ -45,7 +45,7 @@
             // 
             this.tbId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbId.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.Location = new System.Drawing.Point(32, 179);
+            this.tbId.Location = new System.Drawing.Point(123, 211);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(143, 33);
             this.tbId.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.tbMdp1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbMdp1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMdp1.Location = new System.Drawing.Point(458, 179);
+            this.tbMdp1.Location = new System.Drawing.Point(363, 211);
             this.tbMdp1.Name = "tbMdp1";
             this.tbMdp1.PasswordChar = '•';
             this.tbMdp1.Size = new System.Drawing.Size(143, 33);
@@ -115,7 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(461, 150);
+            this.label1.Location = new System.Drawing.Point(366, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 26);
             this.label1.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 150);
+            this.label2.Location = new System.Drawing.Point(145, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 9;
@@ -137,16 +137,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(642, 383);
+            this.Controls.Add(this.tbMdp1);
+            this.Controls.Add(this.tbId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbBienvenue1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btVal);
-            this.Controls.Add(this.tbMdp1);
-            this.Controls.Add(this.tbId);
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConnexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

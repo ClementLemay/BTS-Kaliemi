@@ -157,10 +157,10 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 280);
+            this.label5.Location = new System.Drawing.Point(3, 280);
             this.label5.MinimumSize = new System.Drawing.Size(137, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 36);
+            this.label5.Size = new System.Drawing.Size(237, 48);
             this.label5.TabIndex = 4;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -209,7 +209,6 @@
             this.label3.Size = new System.Drawing.Size(53, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "Prévu :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -252,7 +251,9 @@
             this.Controls.Add(this.cbSoins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAjoutSoinVisite";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout soin visite";
+            this.Load += new System.EventHandler(this.FormAjoutSoinVisite_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).EndInit();
             this.ResumeLayout(false);

@@ -13,11 +13,32 @@ namespace InterfaceUser
     public partial class FormParamètre : Form
     {
         Form FormAccueil = new Form();
+        int id;
         public FormParamètre(int id, Form uneFormAccueil)
         {
             InitializeComponent();
-            lbId.Text = Model.GetLoginPersonneFromId(id);
+            
             this.FormAccueil = uneFormAccueil;
+            this.id = id;
+        }
+
+        private void FormParamètre_Load(object sender, EventArgs e)
+        {
+            lbId.Text = Model.GetLoginPersonneFromId(id);
+            try
+            {
+                var LQuery = Model.maConnexion.infirmiere.ToList()
+                           .Where(x => x.id == this.id)
+                           .Select(x => new { x.fichier_photo });
+                foreach (var v in LQuery)
+                {
+                    byte[] byteImage = v.fichier_photo;
+                    Image x = (Bitmap)((new ImageConverter()).ConvertFrom(byteImage));
+                    pictureBox1.Image = x;
+                }
+                btAjouterPhoto.Text = "Modifier la photo";
+            }
+            catch (Exception) { }
         }
 
         private void btAnnuler_Click(object sender, EventArgs e)
@@ -52,6 +73,14 @@ namespace InterfaceUser
                 label5.Visible = true;
             }
 
+        }
+
+        private void btAjouterPhoto_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormImage FormImage = new FormImage(id);
+            FormImage.ShowDialog();
+            this.Close();
         }
     }
 }

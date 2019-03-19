@@ -44,15 +44,18 @@
             this.btAnnuler = new System.Windows.Forms.Button();
             this.personne_loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.btAjouterPhoto = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 74);
+            this.label1.Location = new System.Drawing.Point(153, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 26);
             this.label1.TabIndex = 0;
@@ -62,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 132);
+            this.label2.Location = new System.Drawing.Point(153, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 26);
             this.label2.TabIndex = 1;
@@ -72,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 195);
+            this.label3.Location = new System.Drawing.Point(153, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 26);
             this.label3.TabIndex = 2;
@@ -105,24 +108,30 @@
             this.tbAncMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAncMdp.Location = new System.Drawing.Point(415, 132);
             this.tbAncMdp.Name = "tbAncMdp";
+            this.tbAncMdp.PasswordChar = '•';
             this.tbAncMdp.Size = new System.Drawing.Size(192, 35);
             this.tbAncMdp.TabIndex = 5;
+            this.tbAncMdp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbNouMdp
             // 
             this.tbNouMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNouMdp.Location = new System.Drawing.Point(415, 195);
             this.tbNouMdp.Name = "tbNouMdp";
+            this.tbNouMdp.PasswordChar = '•';
             this.tbNouMdp.Size = new System.Drawing.Size(192, 35);
             this.tbNouMdp.TabIndex = 6;
+            this.tbNouMdp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbConfMdp
             // 
             this.tbConfMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbConfMdp.Location = new System.Drawing.Point(415, 249);
             this.tbConfMdp.Name = "tbConfMdp";
+            this.tbConfMdp.PasswordChar = '•';
             this.tbConfMdp.Size = new System.Drawing.Size(192, 35);
             this.tbConfMdp.TabIndex = 7;
+            this.tbConfMdp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -146,6 +155,10 @@
             // 
             // btValider
             // 
+            this.btValider.FlatAppearance.BorderSize = 0;
+            this.btValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btValider.Location = new System.Drawing.Point(170, 327);
@@ -158,6 +171,10 @@
             // 
             // btAnnuler
             // 
+            this.btAnnuler.FlatAppearance.BorderSize = 0;
+            this.btAnnuler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btAnnuler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAnnuler.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAnnuler.ForeColor = System.Drawing.Color.Red;
             this.btAnnuler.Location = new System.Drawing.Point(313, 327);
@@ -183,6 +200,31 @@
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Visible = false;
             // 
+            // btAjouterPhoto
+            // 
+            this.btAjouterPhoto.FlatAppearance.BorderSize = 0;
+            this.btAjouterPhoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btAjouterPhoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAjouterPhoto.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterPhoto.Location = new System.Drawing.Point(12, 327);
+            this.btAjouterPhoto.Name = "btAjouterPhoto";
+            this.btAjouterPhoto.Size = new System.Drawing.Size(114, 46);
+            this.btAjouterPhoto.TabIndex = 12;
+            this.btAjouterPhoto.Text = "Ajouter une photo";
+            this.btAjouterPhoto.UseVisualStyleBackColor = true;
+            this.btAjouterPhoto.Click += new System.EventHandler(this.btAjouterPhoto_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormParamètre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +232,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(628, 390);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btAjouterPhoto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.btValider);
@@ -205,10 +249,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(644, 403);
             this.Name = "FormParamètre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paramètre";
+            this.Load += new System.EventHandler(this.FormParamètre_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +277,7 @@
         private System.Windows.Forms.Button btAnnuler;
         private System.Windows.Forms.BindingSource personne_loginBindingSource;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btAjouterPhoto;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
