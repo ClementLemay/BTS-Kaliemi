@@ -64,6 +64,8 @@
             // 
             // dgvVisite
             // 
+            this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdVisite,
@@ -205,6 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 297);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);

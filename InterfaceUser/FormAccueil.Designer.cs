@@ -53,6 +53,8 @@
             // 
             // dgvVisite
             // 
+            this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdVisite,
@@ -129,15 +131,16 @@
             // lbBienvenue1
             // 
             this.lbBienvenue1.AutoSize = true;
-            this.lbBienvenue1.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBienvenue1.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBienvenue1.Location = new System.Drawing.Point(25, 18);
             this.lbBienvenue1.Name = "lbBienvenue1";
-            this.lbBienvenue1.Size = new System.Drawing.Size(67, 25);
+            this.lbBienvenue1.Size = new System.Drawing.Size(76, 23);
             this.lbBienvenue1.TabIndex = 5;
             this.lbBienvenue1.Text = "label1";
             // 
             // btParam
             // 
+            this.btParam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btParam.FlatAppearance.BorderSize = 0;
             this.btParam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.btParam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
@@ -153,6 +156,7 @@
             // 
             // btDeconnexion
             // 
+            this.btDeconnexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDeconnexion.FlatAppearance.BorderSize = 0;
             this.btDeconnexion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.btDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
@@ -198,6 +202,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
@@ -212,6 +217,7 @@
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
@@ -242,6 +248,7 @@
             // 
             // FormAccueil
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(846, 383);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
