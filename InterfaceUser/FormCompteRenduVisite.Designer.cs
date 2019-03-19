@@ -83,6 +83,7 @@
             this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
+            this.dgvVisite.RowHeadersWidth = 4;
             this.dgvVisite.Size = new System.Drawing.Size(552, 376);
             this.dgvVisite.TabIndex = 1;
             // 
