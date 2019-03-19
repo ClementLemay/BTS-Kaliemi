@@ -136,10 +136,11 @@
             // lbParametre
             // 
             this.lbParametre.AutoSize = true;
-            this.lbParametre.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbParametre.Location = new System.Drawing.Point(3, 3);
+            this.lbParametre.Font = new System.Drawing.Font("Lucida Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbParametre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbParametre.Location = new System.Drawing.Point(4, 5);
             this.lbParametre.Name = "lbParametre";
-            this.lbParametre.Size = new System.Drawing.Size(177, 38);
+            this.lbParametre.Size = new System.Drawing.Size(169, 33);
             this.lbParametre.TabIndex = 0;
             this.lbParametre.Text = "Paramètre";
             // 
@@ -204,7 +205,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(644, 403);
             this.Name = "FormParamètre";
-            this.Text = "FormParamètre";
+            this.Text = "Paramètre";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).EndInit();

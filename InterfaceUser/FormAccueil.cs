@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,14 @@ namespace InterfaceUser
 {
     public partial class FormAccueil : Form
     {
+        private delegate void SafeCallDelegate();
         Form FormConnexion = new FormConnexion();
         string NomPrenom;
         int Id;
+
         public FormAccueil(Form FormConnexion, string NomPrenom, int unId)
         {
+
             InitializeComponent();
             this.Id = unId;
             this.NomPrenom = NomPrenom;
@@ -32,28 +36,12 @@ namespace InterfaceUser
             }
         }
 
-        private void lbBienvenue_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btDeconnexion_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormConnexion FormConnexion = new FormConnexion();
             FormConnexion.ShowDialog();
             this.Close();
-        }
-
-        private void soins_visiteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-        }
-
-        private void soinsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-
         }
 
         private void FormAccueil_Load(object sender, EventArgs e)
@@ -82,8 +70,13 @@ namespace InterfaceUser
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            Model.ImportVisite(this.Id);
+            /*
+            Thread userThread = new Thread(new ThreadStart(dot));
+            userThread.Start();
+            */
+            pictureBox1.Visible = true;
             dgvVisite.Rows.Clear();
+            Model.ImportVisite(this.Id);
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == this.Id)
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
@@ -92,9 +85,29 @@ namespace InterfaceUser
                 string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
-            
+            /*userThread.Abort();
+             */
+            pictureBox1.Visible = false;
         }
-
+        /*
+        private  void doSomeWork()
+        {
+            if (pictureBox1.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(doSomeWork);
+                Invoke(d);
+            }
+            else
+            {
+                pictureBox1.Visible = true;
+            }
+           
+        }
+        private void dot()
+        {
+            doSomeWork();
+        }
+        */
         private void button2_Click(object sender, EventArgs e)
         {
             FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(this.Id);
@@ -105,11 +118,6 @@ namespace InterfaceUser
         {
             FormCarte FormCarte = new FormCarte();
             FormCarte.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

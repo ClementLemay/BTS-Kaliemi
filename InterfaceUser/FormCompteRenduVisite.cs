@@ -70,8 +70,9 @@ namespace InterfaceUser
             }
         }
 
-        private void FormCompteRenduVisite_Load(object sender, EventArgs e)
+        private void FormCompteRenduVisite_Load_1(object sender, EventArgs e)
         {
+
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == idInfimiere)
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
@@ -80,11 +81,6 @@ namespace InterfaceUser
                 string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
-        }
-
-        private void lbNotif_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

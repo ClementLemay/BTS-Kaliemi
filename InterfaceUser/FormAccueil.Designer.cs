@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccueil));
             this.dgvVisite = new System.Windows.Forms.DataGridView();
             this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +47,19 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVisite
             // 
             this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvVisite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdVisite,
@@ -67,7 +72,7 @@
             this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
-            this.dgvVisite.Size = new System.Drawing.Size(678, 334);
+            this.dgvVisite.Size = new System.Drawing.Size(647, 334);
             this.dgvVisite.TabIndex = 0;
             // 
             // IdVisite
@@ -110,10 +115,11 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.dgvVisite);
             this.panel2.Location = new System.Drawing.Point(172, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 334);
+            this.panel2.Size = new System.Drawing.Size(647, 334);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -125,16 +131,17 @@
             this.panel3.Controls.Add(this.btDeconnexion);
             this.panel3.Location = new System.Drawing.Point(0, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(850, 55);
+            this.panel3.Size = new System.Drawing.Size(819, 55);
             this.panel3.TabIndex = 2;
             // 
             // lbBienvenue1
             // 
             this.lbBienvenue1.AutoSize = true;
-            this.lbBienvenue1.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBienvenue1.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBienvenue1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbBienvenue1.Location = new System.Drawing.Point(25, 18);
             this.lbBienvenue1.Name = "lbBienvenue1";
-            this.lbBienvenue1.Size = new System.Drawing.Size(76, 23);
+            this.lbBienvenue1.Size = new System.Drawing.Size(85, 27);
             this.lbBienvenue1.TabIndex = 5;
             this.lbBienvenue1.Text = "label1";
             // 
@@ -146,7 +153,7 @@
             this.btParam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btParam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btParam.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btParam.Location = new System.Drawing.Point(588, 21);
+            this.btParam.Location = new System.Drawing.Point(557, 21);
             this.btParam.Name = "btParam";
             this.btParam.Size = new System.Drawing.Size(115, 33);
             this.btParam.TabIndex = 4;
@@ -162,7 +169,7 @@
             this.btDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeconnexion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeconnexion.Location = new System.Drawing.Point(709, 18);
+            this.btDeconnexion.Location = new System.Drawing.Point(678, 18);
             this.btDeconnexion.Name = "btDeconnexion";
             this.btDeconnexion.Size = new System.Drawing.Size(125, 36);
             this.btDeconnexion.TabIndex = 3;
@@ -177,7 +184,7 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(-5, 72);
+            this.button3.Location = new System.Drawing.Point(-5, 53);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(182, 51);
             this.button3.TabIndex = 5;
@@ -192,7 +199,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(-5, 120);
+            this.button4.Location = new System.Drawing.Point(-5, 107);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(182, 45);
             this.button4.TabIndex = 6;
@@ -223,7 +230,7 @@
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(-2, 284);
+            this.button6.Location = new System.Drawing.Point(-2, 278);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(177, 40);
             this.button6.TabIndex = 7;
@@ -238,7 +245,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-5, 163);
+            this.button1.Location = new System.Drawing.Point(-5, 155);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 45);
             this.button1.TabIndex = 9;
@@ -246,10 +253,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(647, 334);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // FormAccueil
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(846, 383);
+            this.ClientSize = new System.Drawing.Size(815, 383);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
@@ -257,11 +277,14 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
+            this.Text = "Accueil";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,5 +325,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn compte_rendu_infirmiere;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -43,6 +43,7 @@ namespace InterfaceUser
                     label5.Text = "Ajout prit en compte par la base de données";
                     label5.ForeColor = Color.Green;
                     label5.Visible = true;
+                    dgvVisite.Rows.Clear();
                     var LQuery1 = Model.maConnexion.soins_visite.ToList()
                                     .Where(x => x.visite == int.Parse(cbIdVisite.SelectedItem.ToString()))
                                     .Select(x => new { x.visite, x.id_categ_soins, x.id_type_soins, x.id_soins, x.prevu, x.realise });
@@ -94,6 +95,11 @@ namespace InterfaceUser
                     dgvVisite.Rows.Add(LaVisite);
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
