@@ -17,12 +17,14 @@ namespace InterfaceUser
         //private delegate void SafeCallDelegate();
 
         ClassPersonne Personne;
+        int idInfirmiere;
         Form FormConnexion = new FormConnexion();
 
         public FormAccueil(int unId)
         {
             InitializeComponent();
             this.Personne = new ClassPersonne(unId);
+            this.idInfirmiere = unId;
         }
 
         
@@ -36,7 +38,8 @@ namespace InterfaceUser
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
-                string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
         }
@@ -55,7 +58,8 @@ namespace InterfaceUser
                             .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
-                string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
             /*userThread.Abort();
@@ -89,7 +93,7 @@ namespace InterfaceUser
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormCarte FormCarte = new FormCarte();
+            FormCarte FormCarte = new FormCarte(this.idInfirmiere);
             FormCarte.Show();
         }
         private void btDeconnexion_Click(object sender, EventArgs e)
@@ -109,6 +113,26 @@ namespace InterfaceUser
         {
             FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(Personne.getId());
             FormCompteRenduVisite.Show();
+        }
+
+        private void btExporter_Click(object sender, EventArgs e)
+        {
+            FormExporter FormExporter = new FormExporter(dgvVisite, idInfirmiere);
+            FormExporter.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            dgvVisite.Rows.Clear();
+            var LQuery = Model.maConnexion.visite.ToList()
+                            .Where(x => x.infirmiere == Personne.getId())
+                            .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+            foreach (var v in LQuery)
+            {
+                String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                dgvVisite.Rows.Add(LaVisite);
+            }
         }
     }
 }

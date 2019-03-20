@@ -230,14 +230,21 @@ namespace InterfaceUser
             return vretour;
         }
 
-        public static List<string> GetListNomPersonne()
+        public static List<string> GetListNomPatient(int idInfirmiere)
         {
             List<string> vretour = new List<string>();
-            var LQuery = maConnexion.personne.ToList()
-                            .Select(x => new { x.nom });
-            foreach (var v in LQuery)
+            var ListPatientInfirmere = maConnexion.patient.ToList()
+                            .Where(x => x.infirmiere_souhait == idInfirmiere)
+                            .Select(x => new { x.id });
+            foreach (var v in ListPatientInfirmere)
             {
-                vretour.Add(v.nom.ToString());
+                var ListNomPatient = maConnexion.personne.ToList()
+                            .Where(x => x.id == v.id)
+                            .Select(x => new { x.nom });
+                foreach (var x in ListNomPatient)
+                {
+                    vretour.Add(x.nom.ToString());
+                }
             }
             return vretour;
         }
@@ -246,7 +253,7 @@ namespace InterfaceUser
         {
             List<string> vretour = new List<string>();
             var LQuery = maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == idInfirmiere)
+                            
                             .Select(x => new { x.id });
             foreach (var v in LQuery)
             {
@@ -368,7 +375,7 @@ namespace InterfaceUser
                     int duree = int.Parse(JObjectVisite["duree"].ToString());
 
                     importPersonne(idPatient);
-                    insertPatient(idPatient);
+                    insertPatient(idPatient, idInfirmiere);
                     insertVisite(idVisite, idPatient, idInfirmiere, date_prevue, duree);
                     importSoinsVisite(idVisite);
                 }
@@ -489,13 +496,14 @@ namespace InterfaceUser
             return true;
         }
 
-        public static bool insertPatient(int id)
+        public static bool insertPatient(int id,int idInfirmiere)
         {
             bool vretour = false;
             if (GetPatientFromId(id).Count() == 0)
             {
                 patient newPatient = new patient();
                 newPatient.id = id;
+                newPatient.infirmiere_souhait = idInfirmiere;
                 newPatient.informations_medicales = "NULL";
 
                 try
@@ -565,7 +573,46 @@ namespace InterfaceUser
             return vretour;
         }
 
+        /// 
+        /// 
+        /// Methodes de type DELETE
+        /// 
+        ///
 
+        public static bool deleteDataVisite(int idInfirmiere){
+            bool vretour = true;
+            try
+            {
+                var ListVisiteInfirmier = maConnexion.visite.ToList()
+                           .Where(x => x.infirmiere == idInfirmiere)
+                           .Select(x => new { x.id });
+                foreach (var v in ListVisiteInfirmier)
+                {
+                    var ListSoinsVisite = maConnexion.soins_visite.ToList()
+                            .Where(x => x.visite == v.id);
+                    maConnexion.soins_visite.RemoveRange(ListSoinsVisite);
+                    maConnexion.SaveChanges();
+                }
+            }
+            catch (Exception) { vretour = false; }
+
+            try
+            {
+                var ListVisiteInfirmier = maConnexion.visite.ToList()
+                           .Where(x => x.infirmiere == idInfirmiere);
+                maConnexion.visite.RemoveRange(ListVisiteInfirmier);
+                maConnexion.SaveChanges();
+            }
+            catch (Exception) { vretour = false;  }
+            return vretour;
+        }
+
+        public static bool sendDataInfirmiere(int idInfirmiere)
+        {
+            bool vretour = true;
+            
+            return vretour;
+        }
 
         /// 
         /// 

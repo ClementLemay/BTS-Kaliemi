@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceUser
 {
-    class ClassPersonne
+    public class ClassPersonne
     {
         int id;
         string nom;

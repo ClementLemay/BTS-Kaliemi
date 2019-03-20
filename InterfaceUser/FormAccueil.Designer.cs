@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccueil));
             this.dgvVisite = new System.Windows.Forms.DataGridView();
             this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +43,11 @@
             this.lbBienvenue1 = new System.Windows.Forms.Label();
             this.btParam = new System.Windows.Forms.Button();
             this.btDeconnexion = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btAjouterCR = new System.Windows.Forms.Button();
+            this.btLocalisation = new System.Windows.Forms.Button();
+            this.btExporter = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btAjouterSV = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,7 +63,7 @@
             this.dgvVisite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdVisite,
-            this.IdPatient,
+            this.Patient,
             this.IdInfirmiere,
             this.date_prevue,
             this.date_reelle,
@@ -79,10 +80,12 @@
             this.IdVisite.HeaderText = "IdVisite";
             this.IdVisite.Name = "IdVisite";
             // 
-            // IdPatient
+            // Patient
             // 
-            this.IdPatient.HeaderText = "IdPatient";
-            this.IdPatient.Name = "IdPatient";
+            this.Patient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Patient.HeaderText = "Patient";
+            this.Patient.Name = "Patient";
+            this.Patient.Width = 65;
             // 
             // IdInfirmiere
             // 
@@ -191,52 +194,53 @@
             this.btDeconnexion.UseVisualStyleBackColor = true;
             this.btDeconnexion.Click += new System.EventHandler(this.btDeconnexion_Click);
             // 
-            // button3
+            // btAjouterCR
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(-5, 53);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 51);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Ajouter un compte rendu";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.btAjouterCR.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btAjouterCR.FlatAppearance.BorderSize = 0;
+            this.btAjouterCR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btAjouterCR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btAjouterCR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAjouterCR.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterCR.Location = new System.Drawing.Point(-5, 53);
+            this.btAjouterCR.Name = "btAjouterCR";
+            this.btAjouterCR.Size = new System.Drawing.Size(182, 51);
+            this.btAjouterCR.TabIndex = 5;
+            this.btAjouterCR.Text = "Ajouter un compte rendu";
+            this.btAjouterCR.UseVisualStyleBackColor = true;
+            this.btAjouterCR.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // btLocalisation
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(-5, 154);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 45);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Localisation personne";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button3_Click);
+            this.btLocalisation.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btLocalisation.FlatAppearance.BorderSize = 0;
+            this.btLocalisation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btLocalisation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btLocalisation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btLocalisation.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLocalisation.Location = new System.Drawing.Point(-5, 148);
+            this.btLocalisation.Name = "btLocalisation";
+            this.btLocalisation.Size = new System.Drawing.Size(182, 45);
+            this.btLocalisation.TabIndex = 6;
+            this.btLocalisation.Text = "Localisation personne";
+            this.btLocalisation.UseVisualStyleBackColor = true;
+            this.btLocalisation.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
+            // btExporter
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(-5, 321);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(182, 41);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Exporter";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btExporter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btExporter.FlatAppearance.BorderSize = 0;
+            this.btExporter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btExporter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btExporter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExporter.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExporter.Location = new System.Drawing.Point(-5, 321);
+            this.btExporter.Name = "btExporter";
+            this.btExporter.Size = new System.Drawing.Size(182, 41);
+            this.btExporter.TabIndex = 8;
+            this.btExporter.Text = "Exporter";
+            this.btExporter.UseVisualStyleBackColor = true;
+            this.btExporter.Click += new System.EventHandler(this.btExporter_Click);
             // 
             // button6
             // 
@@ -254,6 +258,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btAjouterSV
+            // 
+            this.btAjouterSV.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btAjouterSV.FlatAppearance.BorderSize = 0;
+            this.btAjouterSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btAjouterSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btAjouterSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAjouterSV.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterSV.Location = new System.Drawing.Point(-5, 102);
+            this.btAjouterSV.Name = "btAjouterSV";
+            this.btAjouterSV.Size = new System.Drawing.Size(182, 45);
+            this.btAjouterSV.TabIndex = 9;
+            this.btAjouterSV.Text = "Ajouter un SoinsVisite";
+            this.btAjouterSV.UseVisualStyleBackColor = true;
+            this.btAjouterSV.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -262,13 +282,13 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-5, 105);
+            this.button1.Location = new System.Drawing.Point(-5, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ajouter un SoinsVisite";
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Rafraichir l\'affichage";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button2_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormAccueil
             // 
@@ -276,11 +296,12 @@
             this.ClientSize = new System.Drawing.Size(815, 383);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btAjouterSV);
+            this.Controls.Add(this.btExporter);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btLocalisation);
+            this.Controls.Add(this.btAjouterCR);
+            this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -318,19 +339,20 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btParam;
         private System.Windows.Forms.Button btDeconnexion;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btAjouterCR;
+        private System.Windows.Forms.Button btLocalisation;
+        private System.Windows.Forms.Button btExporter;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label lbBienvenue1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btAjouterSV;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdVisite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPatient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Patient;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdInfirmiere;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_prevue;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn compte_rendu_infirmiere;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
