@@ -66,8 +66,8 @@
             // 
             this.btVal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btVal.FlatAppearance.BorderSize = 0;
-            this.btVal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btVal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btVal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btVal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btVal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btVal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVal.Location = new System.Drawing.Point(245, 286);

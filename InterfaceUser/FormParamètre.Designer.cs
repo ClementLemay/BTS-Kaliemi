@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btAjouterPhoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -225,6 +226,18 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(51, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 26);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Vide";
+            this.label6.Visible = false;
+            // 
             // FormParamètre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +245,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(628, 390);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btAjouterPhoto);
             this.Controls.Add(this.label5);
@@ -247,6 +261,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(644, 429);
             this.MinimumSize = new System.Drawing.Size(644, 403);
             this.Name = "FormParamètre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -279,5 +294,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btAjouterPhoto;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

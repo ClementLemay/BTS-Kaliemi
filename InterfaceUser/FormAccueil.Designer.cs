@@ -48,7 +48,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,11 +162,11 @@
             this.btParam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btParam.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btParam.FlatAppearance.BorderSize = 0;
-            this.btParam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btParam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btParam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btParam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btParam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btParam.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btParam.Location = new System.Drawing.Point(572, 18);
+            this.btParam.Location = new System.Drawing.Point(574, 18);
             this.btParam.Name = "btParam";
             this.btParam.Size = new System.Drawing.Size(115, 35);
             this.btParam.TabIndex = 4;
@@ -180,8 +179,8 @@
             this.btDeconnexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btDeconnexion.FlatAppearance.BorderSize = 0;
-            this.btDeconnexion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btDeconnexion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeconnexion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDeconnexion.Location = new System.Drawing.Point(690, 18);
@@ -196,8 +195,8 @@
             // 
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(-5, 53);
@@ -212,15 +211,15 @@
             // 
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(-5, 107);
+            this.button4.Location = new System.Drawing.Point(-5, 154);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(182, 45);
             this.button4.TabIndex = 6;
-            this.button4.Text = "Localition personne";
+            this.button4.Text = "Localisation personne";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -228,8 +227,8 @@
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(-5, 321);
@@ -243,11 +242,11 @@
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(-2, 278);
+            this.button6.Location = new System.Drawing.Point(-2, 280);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(177, 40);
             this.button6.TabIndex = 7;
@@ -259,11 +258,11 @@
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-5, 155);
+            this.button1.Location = new System.Drawing.Point(-5, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 45);
             this.button1.TabIndex = 9;
@@ -275,13 +274,13 @@
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(815, 383);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -332,7 +331,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn compte_rendu_infirmiere;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

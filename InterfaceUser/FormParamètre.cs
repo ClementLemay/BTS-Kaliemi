@@ -39,6 +39,11 @@ namespace InterfaceUser
                 btAjouterPhoto.Text = "Modifier la photo";
             }
             catch (Exception) { }
+            if (pictureBox1.Image == null)
+            {
+                label6.Visible = true;
+                pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            }
         }
 
         private void btAnnuler_Click(object sender, EventArgs e)

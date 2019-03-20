@@ -184,8 +184,8 @@
             // 
             this.btValider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btValider.FlatAppearance.BorderSize = 0;
-            this.btValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btValider.ForeColor = System.Drawing.Color.Black;
