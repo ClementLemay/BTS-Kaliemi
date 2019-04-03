@@ -33,11 +33,18 @@ namespace InterfaceUser
             {
                 if (cbVisite.Checked)
                 {
-                    if (Model.deleteDataVisite(this.idInfirmiere) == false)
+                    if (Model.exportVisite(Model.GetListVisiteFromIdinfirmiere(this.idInfirmiere)))
                     {
-                        requetteAnnulé = true;
+                        if (Model.deleteDataVisite(this.idInfirmiere) == false)
+                        {
+                            requetteAnnulé = true;
+                        }
+                        else
+                        {
+                            dgvVisite.Rows.Clear();
+                        }
                     }
-                    else { dgvVisite.Rows.Clear(); }
+
                 }
 
                 if (cbParam.Checked)

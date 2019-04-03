@@ -32,7 +32,6 @@
             this.dgvVisite = new System.Windows.Forms.DataGridView();
             this.IdVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +47,7 @@
             this.btExporter = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btAjouterSV = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btRafraichir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,7 +63,6 @@
             this.dgvVisite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdVisite,
             this.Patient,
-            this.IdInfirmiere,
             this.date_prevue,
             this.date_reelle,
             this.duree,
@@ -72,45 +70,55 @@
             this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
+            this.dgvVisite.ReadOnly = true;
             this.dgvVisite.Size = new System.Drawing.Size(647, 334);
             this.dgvVisite.TabIndex = 0;
             // 
             // IdVisite
             // 
+            this.IdVisite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.IdVisite.HeaderText = "IdVisite";
             this.IdVisite.Name = "IdVisite";
+            this.IdVisite.ReadOnly = true;
+            this.IdVisite.Width = 66;
             // 
             // Patient
             // 
             this.Patient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Patient.HeaderText = "Patient";
             this.Patient.Name = "Patient";
+            this.Patient.ReadOnly = true;
             this.Patient.Width = 65;
-            // 
-            // IdInfirmiere
-            // 
-            this.IdInfirmiere.HeaderText = "IdInfirmiere";
-            this.IdInfirmiere.Name = "IdInfirmiere";
             // 
             // date_prevue
             // 
+            this.date_prevue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.date_prevue.HeaderText = "date_prevue";
             this.date_prevue.Name = "date_prevue";
+            this.date_prevue.ReadOnly = true;
+            this.date_prevue.Width = 92;
             // 
             // date_reelle
             // 
+            this.date_reelle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.date_reelle.HeaderText = "date_reelle";
             this.date_reelle.Name = "date_reelle";
+            this.date_reelle.ReadOnly = true;
+            this.date_reelle.Width = 84;
             // 
             // duree
             // 
+            this.duree.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.duree.HeaderText = "duree";
             this.duree.Name = "duree";
+            this.duree.ReadOnly = true;
+            this.duree.Width = 59;
             // 
             // compte_rendu_infirmiere
             // 
             this.compte_rendu_infirmiere.HeaderText = "compte_rendu_infirmiere";
             this.compte_rendu_infirmiere.Name = "compte_rendu_infirmiere";
+            this.compte_rendu_infirmiere.ReadOnly = true;
             // 
             // panel2
             // 
@@ -274,21 +282,21 @@
             this.btAjouterSV.UseVisualStyleBackColor = true;
             this.btAjouterSV.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btRafraichir
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-5, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 45);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Rafraichir l\'affichage";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btRafraichir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btRafraichir.FlatAppearance.BorderSize = 0;
+            this.btRafraichir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btRafraichir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btRafraichir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRafraichir.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRafraichir.Location = new System.Drawing.Point(-5, 193);
+            this.btRafraichir.Name = "btRafraichir";
+            this.btRafraichir.Size = new System.Drawing.Size(182, 45);
+            this.btRafraichir.TabIndex = 10;
+            this.btRafraichir.Text = "Rafraichir l\'affichage";
+            this.btRafraichir.UseVisualStyleBackColor = true;
+            this.btRafraichir.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormAccueil
             // 
@@ -301,7 +309,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btLocalisation);
             this.Controls.Add(this.btAjouterCR);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btRafraichir);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -346,13 +354,12 @@
         private System.Windows.Forms.Label lbBienvenue1;
         private System.Windows.Forms.Button btAjouterSV;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btRafraichir;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdVisite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInfirmiere;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_prevue;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn compte_rendu_infirmiere;
-        private System.Windows.Forms.Button button1;
     }
 }

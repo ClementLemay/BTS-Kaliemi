@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompteRenduVisite));
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvVisite = new System.Windows.Forms.DataGridView();
-            this.idVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompteRenduInfi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbNotif = new System.Windows.Forms.Label();
             this.idComboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.idVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompteRenduInfi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.SuspendLayout();
@@ -86,41 +86,6 @@
             this.dgvVisite.RowHeadersWidth = 4;
             this.dgvVisite.Size = new System.Drawing.Size(552, 376);
             this.dgvVisite.TabIndex = 1;
-            // 
-            // idVisite
-            // 
-            this.idVisite.HeaderText = "idVisite";
-            this.idVisite.Name = "idVisite";
-            // 
-            // idPatient
-            // 
-            this.idPatient.HeaderText = "idPatient";
-            this.idPatient.Name = "idPatient";
-            // 
-            // idInfirmiere
-            // 
-            this.idInfirmiere.HeaderText = "idInfirmiere";
-            this.idInfirmiere.Name = "idInfirmiere";
-            // 
-            // date_prevue
-            // 
-            this.date_prevue.HeaderText = "date_prevue";
-            this.date_prevue.Name = "date_prevue";
-            // 
-            // date_reelle
-            // 
-            this.date_reelle.HeaderText = "date_reelle";
-            this.date_reelle.Name = "date_reelle";
-            // 
-            // Duree
-            // 
-            this.Duree.HeaderText = "Duree";
-            this.Duree.Name = "Duree";
-            // 
-            // CompteRenduInfi
-            // 
-            this.CompteRenduInfi.HeaderText = "CompteRenduInfi";
-            this.CompteRenduInfi.Name = "CompteRenduInfi";
             // 
             // lbNotif
             // 
@@ -258,6 +223,45 @@
             this.label5.TabIndex = 9;
             this.label5.Text = ":";
             // 
+            // idVisite
+            // 
+            this.idVisite.HeaderText = "idVisite";
+            this.idVisite.Name = "idVisite";
+            // 
+            // idPatient
+            // 
+            this.idPatient.HeaderText = "idPatient";
+            this.idPatient.Name = "idPatient";
+            // 
+            // idInfirmiere
+            // 
+            this.idInfirmiere.HeaderText = "idInfirmiere";
+            this.idInfirmiere.Name = "idInfirmiere";
+            // 
+            // date_prevue
+            // 
+            this.date_prevue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_prevue.HeaderText = "date_prevue";
+            this.date_prevue.Name = "date_prevue";
+            this.date_prevue.Width = 92;
+            // 
+            // date_reelle
+            // 
+            this.date_reelle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_reelle.HeaderText = "date_reelle";
+            this.date_reelle.Name = "date_reelle";
+            this.date_reelle.Width = 84;
+            // 
+            // Duree
+            // 
+            this.Duree.HeaderText = "Duree";
+            this.Duree.Name = "Duree";
+            // 
+            // CompteRenduInfi
+            // 
+            this.CompteRenduInfi.HeaderText = "CompteRenduInfi";
+            this.CompteRenduInfi.Name = "CompteRenduInfi";
+            // 
             // FormCompteRenduVisite
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -300,6 +304,12 @@
         private System.Windows.Forms.TextBox tbMinute;
         private System.Windows.Forms.TextBox tbCompteRendu;
         private System.Windows.Forms.Button btValider;
+        private System.Windows.Forms.Label lbParametre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVisite;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPatient;
         private System.Windows.Forms.DataGridViewTextBoxColumn idInfirmiere;
@@ -307,11 +317,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompteRenduInfi;
-        private System.Windows.Forms.Label lbParametre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }

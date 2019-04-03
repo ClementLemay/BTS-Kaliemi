@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExporter));
             this.cbParam = new System.Windows.Forms.CheckBox();
             this.cbVisite = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -95,7 +96,7 @@
             this.lbParametre.Name = "lbParametre";
             this.lbParametre.Size = new System.Drawing.Size(229, 54);
             this.lbParametre.TabIndex = 11;
-            this.lbParametre.Text = "Exportation de données";
+            this.lbParametre.Text = "Exportation des données";
             this.lbParametre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormExporter
@@ -109,7 +110,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbVisite);
             this.Controls.Add(this.cbParam);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExporter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exporter";
             this.ResumeLayout(false);
             this.PerformLayout();

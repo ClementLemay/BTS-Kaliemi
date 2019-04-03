@@ -35,11 +35,11 @@ namespace InterfaceUser
 
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == Personne.getId())
-                            .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+                            .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
                 String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
-                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
         }
@@ -55,11 +55,11 @@ namespace InterfaceUser
             Model.ImportVisite(Personne.getId());
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == Personne.getId())
-                            .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+                            .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
                 String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
-                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
             /*userThread.Abort();
@@ -126,11 +126,11 @@ namespace InterfaceUser
             dgvVisite.Rows.Clear();
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == Personne.getId())
-                            .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+                            .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
                 String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
-                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
             }
         }

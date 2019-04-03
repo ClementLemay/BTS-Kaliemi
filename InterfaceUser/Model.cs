@@ -253,11 +253,23 @@ namespace InterfaceUser
         {
             List<string> vretour = new List<string>();
             var LQuery = maConnexion.visite.ToList()
-                            
+                            .Where(x => x.infirmiere == idInfirmiere)
                             .Select(x => new { x.id });
             foreach (var v in LQuery)
             {
                 vretour.Add(v.id.ToString());
+            }
+            return vretour;
+        }
+
+        public static List<visite> GetListVisiteFromIdinfirmiere(int idInfirmiere)
+        {
+            List<visite> vretour = new List<visite>();
+            var LQuery = maConnexion.visite.ToList()
+                            .Where(x => x.infirmiere == idInfirmiere);
+            foreach (var v in LQuery)
+            {
+                vretour.Add(v);
             }
             return vretour;
         }
@@ -413,6 +425,45 @@ namespace InterfaceUser
                 }
             }
             catch (Exception) { }
+            return vretour;
+        }
+        /// 
+        /// 
+        /// Methodes de type EXPORTE 
+        /// 
+        /// 
+
+        public static bool exportVisite(List<visite> lesVisites)
+        {
+            bool vretour = false;
+            foreach(var uneVisite in lesVisites)
+            {
+                visite laVisite = new visite();
+                laVisite.duree = uneVisite.duree;
+                laVisite.date_prevue = uneVisite.date_prevue;
+                laVisite.date_reelle = uneVisite.date_reelle;
+                laVisite.compte_rendu_infirmiere = uneVisite.compte_rendu_infirmiere;
+                laVisite.compte_rendu_patient = uneVisite.compte_rendu_patient;
+                laVisite.id = uneVisite.id;
+                laVisite.patient = uneVisite.patient;
+                laVisite.infirmiere = uneVisite.infirmiere;
+
+                string path = "http://www.btssio-carcouet.fr/ppe4/public/modifVisite/" + uneVisite.id;
+                string serializedObject = Newtonsoft.Json.JsonConvert.SerializeObject(laVisite);
+                HttpWebRequest request = WebRequest.CreateHttp(path);
+                request.Method = "PUT";
+                request.AllowWriteStreamBuffering = false;
+                request.ContentType = "application/json";
+                request.Accept = "Accept=application/json";
+                request.SendChunked = false;
+                request.ContentLength = serializedObject.Length;
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(serializedObject);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+            }
             return vretour;
         }
 

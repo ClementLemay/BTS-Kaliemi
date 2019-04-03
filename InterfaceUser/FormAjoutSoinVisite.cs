@@ -24,23 +24,29 @@ namespace InterfaceUser
 
             cbSoins.DataSource = Model.GetListLibelleSoins();
             cbIdVisite.DataSource = Model.GetListIdVisite(this.id);
-            cbRealise.DataSource = new List<string>() { "0", "1" };
-            cbPrevu.DataSource = new List<string>() { "0", "1" };
         }
 
         private void btValider_Click(object sender, EventArgs e)
         {
             if (cbIdVisite.Items.Count != 0)
             {
-                int idVisite = int.Parse(cbIdVisite.SelectedItem.ToString());
-                int etatPrevu = int.Parse(cbPrevu.SelectedItem.ToString());
-                int etatRealise = int.Parse(cbRealise.SelectedItem.ToString());
+                int etatRealise = 0;
+                int etatPrevu = 0;
+                if (cbPrévu.Checked)
+                {
+                    etatPrevu = 1;
+                }
+                if (cbPrévu.Checked)
+                {
+                    etatRealise = 1;
+                }
+                int idVisite = int.Parse(cbIdVisite.SelectedItem.ToString());                
                 string labelleSoins = cbSoins.SelectedItem.ToString();
                 if (etatPrevu == 0)
                 {
                     label5.ForeColor = Color.Orange;
                     label5.Text = "Un soins non-prévu ne peut être non-réaliser, par conséquent il a été modifier à 1";
-                    cbRealise.Text = "1";
+                    cbPrévu.Checked = true;
                     DateTime Tthen = DateTime.Now;
                     do
                     {

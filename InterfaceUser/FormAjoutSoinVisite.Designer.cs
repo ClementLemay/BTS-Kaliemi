@@ -40,15 +40,13 @@
             this.realise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbSoins = new System.Windows.Forms.ComboBox();
             this.cbIdVisite = new System.Windows.Forms.ComboBox();
-            this.cbRealise = new System.Windows.Forms.ComboBox();
-            this.cbPrevu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btValider = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lbParametre = new System.Windows.Forms.Label();
+            this.cbPrévu = new System.Windows.Forms.CheckBox();
+            this.cbRéalisé = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.SuspendLayout();
@@ -137,22 +135,6 @@
             this.cbIdVisite.TabIndex = 1;
             this.cbIdVisite.SelectedIndexChanged += new System.EventHandler(this.cbIdVisite_SelectedIndexChanged);
             // 
-            // cbRealise
-            // 
-            this.cbRealise.FormattingEnabled = true;
-            this.cbRealise.Location = new System.Drawing.Point(83, 125);
-            this.cbRealise.Name = "cbRealise";
-            this.cbRealise.Size = new System.Drawing.Size(142, 21);
-            this.cbRealise.TabIndex = 2;
-            // 
-            // cbPrevu
-            // 
-            this.cbPrevu.FormattingEnabled = true;
-            this.cbPrevu.Location = new System.Drawing.Point(83, 170);
-            this.cbPrevu.Name = "cbPrevu";
-            this.cbPrevu.Size = new System.Drawing.Size(142, 21);
-            this.cbPrevu.TabIndex = 3;
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -200,26 +182,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "IdVisite :";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 19);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Prévu :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 19);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Realisé :";
-            // 
             // lbParametre
             // 
             this.lbParametre.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,22 +193,42 @@
             this.lbParametre.Text = "Ajouter un soin à une visite";
             this.lbParametre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cbPrévu
+            // 
+            this.cbPrévu.AutoSize = true;
+            this.cbPrévu.Font = new System.Drawing.Font("Calibri", 12F);
+            this.cbPrévu.Location = new System.Drawing.Point(37, 149);
+            this.cbPrévu.Name = "cbPrévu";
+            this.cbPrévu.Size = new System.Drawing.Size(72, 23);
+            this.cbPrévu.TabIndex = 13;
+            this.cbPrévu.Text = "Prévu :";
+            this.cbPrévu.UseVisualStyleBackColor = true;
+            // 
+            // cbRéalisé
+            // 
+            this.cbRéalisé.AutoSize = true;
+            this.cbRéalisé.Font = new System.Drawing.Font("Calibri", 12F);
+            this.cbRéalisé.Location = new System.Drawing.Point(131, 149);
+            this.cbRéalisé.Name = "cbRéalisé";
+            this.cbRéalisé.Size = new System.Drawing.Size(84, 23);
+            this.cbRéalisé.TabIndex = 14;
+            this.cbRéalisé.Text = "Réalisé :";
+            this.cbRéalisé.UseVisualStyleBackColor = true;
+            // 
             // FormAjoutSoinVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 403);
+            this.Controls.Add(this.cbRéalisé);
+            this.Controls.Add(this.cbPrévu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbParametre);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btValider);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbPrevu);
-            this.Controls.Add(this.cbRealise);
             this.Controls.Add(this.cbIdVisite);
             this.Controls.Add(this.cbSoins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -266,15 +248,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbSoins;
         private System.Windows.Forms.ComboBox cbIdVisite;
-        private System.Windows.Forms.ComboBox cbRealise;
-        private System.Windows.Forms.ComboBox cbPrevu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvVisite;
         private System.Windows.Forms.Button btValider;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdVisite;
         private System.Windows.Forms.DataGridViewTextBoxColumn libelSoins;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_categ_soins;
@@ -283,5 +261,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prevu;
         private System.Windows.Forms.DataGridViewTextBoxColumn realise;
         private System.Windows.Forms.Label lbParametre;
+        private System.Windows.Forms.CheckBox cbPrévu;
+        private System.Windows.Forms.CheckBox cbRéalisé;
     }
 }
