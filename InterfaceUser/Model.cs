@@ -457,12 +457,14 @@ namespace InterfaceUser
                 request.Accept = "Accept=application/json";
                 request.SendChunked = false;
                 request.ContentLength = serializedObject.Length;
+                request.Timeout = 2500;
                 using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {
                     streamWriter.Write(serializedObject);
                     streamWriter.Flush();
                     streamWriter.Close();
                 }
+                vretour = true;
             }
             return vretour;
         }
