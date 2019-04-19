@@ -64,6 +64,7 @@
             // 
             // dgvVisite
             // 
+            this.dgvVisite.AllowUserToAddRows = false;
             this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvVisite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -79,6 +80,8 @@
             this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
+            this.dgvVisite.ReadOnly = true;
+            this.dgvVisite.RowHeadersVisible = false;
             this.dgvVisite.Size = new System.Drawing.Size(558, 404);
             this.dgvVisite.TabIndex = 0;
             // 
@@ -86,36 +89,43 @@
             // 
             this.IdVisite.HeaderText = "IdVisite";
             this.IdVisite.Name = "IdVisite";
+            this.IdVisite.ReadOnly = true;
             // 
             // libelSoins
             // 
             this.libelSoins.HeaderText = "libelSoins";
             this.libelSoins.Name = "libelSoins";
+            this.libelSoins.ReadOnly = true;
             // 
             // id_categ_soins
             // 
             this.id_categ_soins.HeaderText = "id_categ_soins";
             this.id_categ_soins.Name = "id_categ_soins";
+            this.id_categ_soins.ReadOnly = true;
             // 
             // id_type_soins
             // 
             this.id_type_soins.HeaderText = "id_type_soins";
             this.id_type_soins.Name = "id_type_soins";
+            this.id_type_soins.ReadOnly = true;
             // 
             // id_soins
             // 
             this.id_soins.HeaderText = "id_soins";
             this.id_soins.Name = "id_soins";
+            this.id_soins.ReadOnly = true;
             // 
             // prevu
             // 
             this.prevu.HeaderText = "prevu";
             this.prevu.Name = "prevu";
+            this.prevu.ReadOnly = true;
             // 
             // realise
             // 
             this.realise.HeaderText = "realise";
             this.realise.Name = "realise";
+            this.realise.ReadOnly = true;
             // 
             // cbSoins
             // 

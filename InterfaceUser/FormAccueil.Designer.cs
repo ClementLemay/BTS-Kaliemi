@@ -55,6 +55,7 @@
             // 
             // dgvVisite
             // 
+            this.dgvVisite.AllowUserToAddRows = false;
             this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvVisite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -70,6 +71,11 @@
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
             this.dgvVisite.ReadOnly = true;
+            this.dgvVisite.RowHeadersVisible = false;
+            this.dgvVisite.ShowCellErrors = false;
+            this.dgvVisite.ShowCellToolTips = false;
+            this.dgvVisite.ShowEditingIcon = false;
+            this.dgvVisite.ShowRowErrors = false;
             this.dgvVisite.Size = new System.Drawing.Size(647, 334);
             this.dgvVisite.TabIndex = 0;
             // 
@@ -135,9 +141,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(643, 331);
+            this.pictureBox1.Size = new System.Drawing.Size(643, 330);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -182,6 +188,8 @@
             this.btParam.Text = "Paramètre";
             this.btParam.UseVisualStyleBackColor = true;
             this.btParam.Click += new System.EventHandler(this.btParam_Click);
+            this.btParam.MouseEnter += new System.EventHandler(this.btParam_Enter);
+            this.btParam.MouseLeave += new System.EventHandler(this.btParam_Leave);
             // 
             // btDeconnexion
             // 
@@ -199,6 +207,8 @@
             this.btDeconnexion.Text = "Déconnexion";
             this.btDeconnexion.UseVisualStyleBackColor = true;
             this.btDeconnexion.Click += new System.EventHandler(this.btDeconnexion_Click);
+            this.btDeconnexion.MouseEnter += new System.EventHandler(this.btDeconnexion_MouseEnter);
+            this.btDeconnexion.MouseLeave += new System.EventHandler(this.btDeconnexion_MouseLeave);
             // 
             // btAjouterCR
             // 
@@ -228,7 +238,7 @@
             this.btLocalisation.Name = "btLocalisation";
             this.btLocalisation.Size = new System.Drawing.Size(182, 45);
             this.btLocalisation.TabIndex = 6;
-            this.btLocalisation.Text = "Localisation personne";
+            this.btLocalisation.Text = "Localisation patient";
             this.btLocalisation.UseVisualStyleBackColor = true;
             this.btLocalisation.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -266,6 +276,7 @@
             this.button6.TabIndex = 7;
             this.button6.Text = "Importer";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseWaitCursor = true;
             this.button6.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btAjouterSV

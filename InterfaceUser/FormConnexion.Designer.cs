@@ -190,7 +190,7 @@
             this.Controls.Add(this.lbBienvenue1);
             this.Controls.Add(this.btVal);
             this.Controls.Add(this.bottomLogo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

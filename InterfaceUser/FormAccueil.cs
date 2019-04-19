@@ -95,13 +95,13 @@ namespace InterfaceUser
         private void btParam_Click(object sender, EventArgs e)
         {
             Form FormParamètre = new FormParamètre(Personne.getId(), this);
-            FormParamètre.Show();
+            FormParamètre.ShowDialog();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dgvVisite.RowCount > 1)
+            if (dgvVisite.RowCount > 0)
             {
                 FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(Personne.getId(),dgvVisite, Personne);
                 FormCompteRenduVisite.Show();
@@ -115,7 +115,7 @@ namespace InterfaceUser
 
         private void btExporter_Click(object sender, EventArgs e)
         {
-            if (dgvVisite.RowCount > 1)
+            if (dgvVisite.RowCount > 0)
             {
                 if (Model.isConnected() == true)
                 {
@@ -132,6 +132,26 @@ namespace InterfaceUser
             {
                 Model.Shake_Form(this);
             }
+        }
+
+        private void btParam_Enter(object sender, EventArgs e)
+        {
+            btParam.ForeColor = Color.White;
+        }
+
+        private void btParam_Leave(object sender, EventArgs e)
+        {
+            btParam.ForeColor = Color.Black;
+        }
+
+        private void btDeconnexion_MouseEnter(object sender, EventArgs e)
+        {
+            btDeconnexion.ForeColor = Color.White;
+        }
+
+        private void btDeconnexion_MouseLeave(object sender, EventArgs e)
+        {
+            btDeconnexion.ForeColor = Color.Black;
         }
     }
 }

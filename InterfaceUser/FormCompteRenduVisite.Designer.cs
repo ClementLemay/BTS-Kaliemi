@@ -68,6 +68,7 @@
             // 
             // dgvVisite
             // 
+            this.dgvVisite.AllowUserToAddRows = false;
             this.dgvVisite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisite.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvVisite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -83,6 +84,7 @@
             this.dgvVisite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVisite.Location = new System.Drawing.Point(0, 0);
             this.dgvVisite.Name = "dgvVisite";
+            this.dgvVisite.RowHeadersVisible = false;
             this.dgvVisite.RowHeadersWidth = 4;
             this.dgvVisite.Size = new System.Drawing.Size(552, 376);
             this.dgvVisite.TabIndex = 1;
