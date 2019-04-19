@@ -47,7 +47,6 @@
             this.btExporter = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btAjouterSV = new System.Windows.Forms.Button();
-            this.btRafraichir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -241,6 +240,8 @@
             this.btExporter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btExporter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExporter.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExporter.Image = ((System.Drawing.Image)(resources.GetObject("btExporter.Image")));
+            this.btExporter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btExporter.Location = new System.Drawing.Point(-5, 321);
             this.btExporter.Name = "btExporter";
             this.btExporter.Size = new System.Drawing.Size(182, 41);
@@ -257,6 +258,8 @@
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-2, 280);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(177, 40);
@@ -281,22 +284,6 @@
             this.btAjouterSV.UseVisualStyleBackColor = true;
             this.btAjouterSV.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btRafraichir
-            // 
-            this.btRafraichir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btRafraichir.FlatAppearance.BorderSize = 0;
-            this.btRafraichir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btRafraichir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btRafraichir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRafraichir.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRafraichir.Location = new System.Drawing.Point(-5, 193);
-            this.btRafraichir.Name = "btRafraichir";
-            this.btRafraichir.Size = new System.Drawing.Size(182, 45);
-            this.btRafraichir.TabIndex = 10;
-            this.btRafraichir.Text = "Rafraichir l\'affichage";
-            this.btRafraichir.UseVisualStyleBackColor = true;
-            this.btRafraichir.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // FormAccueil
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -308,7 +295,6 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btLocalisation);
             this.Controls.Add(this.btAjouterCR);
-            this.Controls.Add(this.btRafraichir);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -353,7 +339,6 @@
         private System.Windows.Forms.Label lbBienvenue1;
         private System.Windows.Forms.Button btAjouterSV;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btRafraichir;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdVisite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patient;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_prevue;

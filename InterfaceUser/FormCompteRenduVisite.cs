@@ -13,10 +13,14 @@ namespace InterfaceUser
     public partial class FormCompteRenduVisite : Form
     {
         int idInfimiere;
-        public FormCompteRenduVisite(int idInfirmiere)
+        ClassPersonne Personne;
+        DataGridView dgvAccueil;
+        public FormCompteRenduVisite(int idInfirmiere,DataGridView dgvAccueil, ClassPersonne Personne)
         {
             InitializeComponent();
+            this.Personne = Personne;
             this.idInfimiere = idInfirmiere;
+            this.dgvAccueil = dgvAccueil;
             idComboBox.DataSource = Model.GetListIdVisite(idInfirmiere);
         }
 
@@ -37,14 +41,26 @@ namespace InterfaceUser
                 lbNotif.ForeColor = Color.Green;
                 lbNotif.Text = "Requete reçu par le serveur";
                 dgvVisite.Rows.Clear();
-                var LQuery = Model.maConnexion.visite.ToList()
+                var LQuery1 = Model.maConnexion.visite.ToList()
                                 .Where(x => x.infirmiere == idInfimiere)
                                 .Where(x => x.id == int.Parse(idComboBox.SelectedValue.ToString()))
                                 .Select(x => new { x.id, x.patient, x.infirmiere, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
-                foreach (var v in LQuery)
+                foreach (var v in LQuery1)
                 {
                     string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                     dgvVisite.Rows.Add(LaVisite);
+                }
+
+                dgvAccueil.Rows.Clear();
+                Model.ImportVisite(Personne.getId());
+                var LQuery2 = Model.maConnexion.visite.ToList()
+                                .Where(x => x.infirmiere == Personne.getId())
+                                .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+                foreach (var v in LQuery2)
+                {
+                    String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
+                    string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                    dgvAccueil.Rows.Add(LaVisite);
                 }
 
             }

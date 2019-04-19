@@ -27,46 +27,51 @@ namespace InterfaceUser
         public static bool connexionWebService(string login, string mdp)
         {
             bool vretour = false;
-            var url = "http://www.btssio-carcouet.fr/ppe4/public/connect2/" + login + "/" + mdp + "/infirmiere";
-            WebRequest request = WebRequest.Create(url);
-            request.Credentials = CredentialCache.DefaultCredentials;
-            WebResponse response = request.GetResponse();
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-
-
             try
             {
-                string responseFromServer = reader.ReadToEnd();
-                JObject JsonLogin = JObject.Parse(responseFromServer);
+                var url = "http://www.btssio-carcouet.fr/ppe4/public/connect2/" + login + "/" + mdp + "/infirmiere";
+                WebRequest request = WebRequest.Create(url);
+                request.Credentials = CredentialCache.DefaultCredentials;
+                WebResponse response = request.GetResponse();
+                Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
 
-                string nom = JsonLogin["nom"].ToString();
-                string prenom = JsonLogin["prenom"].ToString();
 
-                if (nom != "" && prenom != "")
+                try
                 {
-                    vretour = true;
+                    string responseFromServer = reader.ReadToEnd();
+                    JObject JsonLogin = JObject.Parse(responseFromServer);
 
-                    int id = int.Parse(JsonLogin["id"].ToString());
-                    string sexe = JsonLogin["sexe"].ToString();
-                    DateTime date_naiss = new DateTime();
-                    date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"].ToString());
-                    string ad1 = JsonLogin["ad1"].ToString();
-                    string ad2 = JsonLogin["ad2"].ToString();
-                    int cp = int.Parse(JsonLogin["cp"].ToString());
-                    string ville = JsonLogin["ville"].ToString();
-                    string tel_fixe = JsonLogin["tel_fixe"].ToString();
-                    string tel_port = JsonLogin["tel_port"].ToString();
-                    string mail = JsonLogin["mail"].ToString();
+                    string nom = JsonLogin["nom"].ToString();
+                    string prenom = JsonLogin["prenom"].ToString();
 
-                    insertPersonne(id, nom, prenom, sexe, date_naiss, ad1, ad2, cp, ville, tel_fixe, tel_port, mail);
-                    insertPersonne_Login(id, login, mdp);
-                    insertInfirmiere(id);
+                    if (nom != "" && prenom != "")
+                    {
+                        vretour = true;
+
+                        int id = int.Parse(JsonLogin["id"].ToString());
+                        string sexe = JsonLogin["sexe"].ToString();
+                        DateTime date_naiss = new DateTime();
+                        date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"].ToString());
+                        string ad1 = JsonLogin["ad1"].ToString();
+                        string ad2 = JsonLogin["ad2"].ToString();
+                        int cp = int.Parse(JsonLogin["cp"].ToString());
+                        string ville = JsonLogin["ville"].ToString();
+                        string tel_fixe = JsonLogin["tel_fixe"].ToString();
+                        string tel_port = JsonLogin["tel_port"].ToString();
+                        string mail = JsonLogin["mail"].ToString();
+
+                        insertPersonne(id, nom, prenom, sexe, date_naiss, ad1, ad2, cp, ville, tel_fixe, tel_port, mail);
+                        insertPersonne_Login(id, login, mdp);
+                        insertInfirmiere(id);
+                    }
                 }
+                catch (Exception) { }
+            }catch (Exception)
+            {
+                vretour = false;
             }
-            catch (Exception) { }
-
             return vretour;
         }
 
@@ -443,35 +448,41 @@ namespace InterfaceUser
         public static bool exportVisite(List<visite> lesVisites)
         {
             bool vretour = false;
-            foreach(var uneVisite in lesVisites)
+            try
             {
-                visite laVisite = new visite();
-                laVisite.duree = uneVisite.duree;
-                laVisite.date_prevue = uneVisite.date_prevue;
-                laVisite.date_reelle = uneVisite.date_reelle;
-                laVisite.compte_rendu_infirmiere = uneVisite.compte_rendu_infirmiere;
-                laVisite.compte_rendu_patient = uneVisite.compte_rendu_patient;
-                laVisite.id = uneVisite.id;
-                laVisite.patient = uneVisite.patient;
-                laVisite.infirmiere = uneVisite.infirmiere;
-
-                string path = "http://www.btssio-carcouet.fr/ppe4/public/modifVisite/" + uneVisite.id;
-                string serializedObject = Newtonsoft.Json.JsonConvert.SerializeObject(laVisite);
-                HttpWebRequest request = WebRequest.CreateHttp(path);
-                request.Method = "PUT";
-                request.AllowWriteStreamBuffering = false;
-                request.ContentType = "application/json";
-                request.Accept = "Accept=application/json";
-                request.SendChunked = false;
-                request.ContentLength = serializedObject.Length;
-                request.Timeout = 300;
-                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                foreach (var uneVisite in lesVisites)
                 {
-                    streamWriter.Write(serializedObject);
-                    streamWriter.Flush();
-                    streamWriter.Close();
+                    visite laVisite = new visite();
+                    laVisite.duree = uneVisite.duree;
+                    laVisite.date_prevue = uneVisite.date_prevue;
+                    laVisite.date_reelle = uneVisite.date_reelle;
+                    laVisite.compte_rendu_infirmiere = uneVisite.compte_rendu_infirmiere;
+                    laVisite.compte_rendu_patient = uneVisite.compte_rendu_patient;
+                    laVisite.id = uneVisite.id;
+                    laVisite.patient = uneVisite.patient;
+                    laVisite.infirmiere = uneVisite.infirmiere;
+
+                    string path = "http://www.btssio-carcouet.fr/ppe4/public/modifVisite/" + uneVisite.id;
+                    string serializedObject = Newtonsoft.Json.JsonConvert.SerializeObject(laVisite);
+                    HttpWebRequest request = WebRequest.CreateHttp(path);
+                    request.Method = "PUT";
+                    request.AllowWriteStreamBuffering = false;
+                    request.ContentType = "application/json";
+                    request.Accept = "Accept=application/json";
+                    request.SendChunked = false;
+                    request.ContentLength = serializedObject.Length;
+                    request.Timeout = 500;
+                    using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                    {
+                        streamWriter.Write(serializedObject);
+                        streamWriter.Flush();
+                        streamWriter.Close();
+                    }
+                    vretour = true;
                 }
-                vretour = true;
+            }catch(Exception)
+            {
+                vretour = false;
             }
             return vretour;
         }
@@ -844,8 +855,20 @@ namespace InterfaceUser
                     System.Windows.Forms.MessageBox.Show(ex.InnerException.Message + " SoinsVisite ");
                 }
             }
-
             return vretour;
+        }
+
+        public static void Shake_Form(Form laForm)
+        {
+            var original = laForm.Location;
+            var rnd = new Random(1337);
+            const int shake_amplitude = 10;
+            for (int i = 0; i < 10; i++)
+            {
+                laForm.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y);
+                System.Threading.Thread.Sleep(35);
+                laForm.Location = original;
+            }
         }
     }
 }

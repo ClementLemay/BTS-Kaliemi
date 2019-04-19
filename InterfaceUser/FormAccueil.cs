@@ -69,8 +69,15 @@ namespace InterfaceUser
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(Personne.getId());
-            FormAjoutSoinVisite.Show();
+            if (dgvVisite.RowCount > 1)
+            {
+                FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(Personne.getId());
+                FormAjoutSoinVisite.Show();
+            }
+            else
+            {
+                Model.Shake_Form(this);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -89,39 +96,41 @@ namespace InterfaceUser
         {
             Form FormParamètre = new FormParamètre(Personne.getId(), this);
             FormParamètre.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(Personne.getId());
-            FormCompteRenduVisite.Show();
+            if (dgvVisite.RowCount > 1)
+            {
+                FormCompteRenduVisite FormCompteRenduVisite = new FormCompteRenduVisite(Personne.getId(),dgvVisite, Personne);
+                FormCompteRenduVisite.Show();
+            }
+            else
+            {
+                Model.Shake_Form(this);
+            }
+
         }
 
         private void btExporter_Click(object sender, EventArgs e)
         {
-            if (Model.isConnected() == true)
+            if (dgvVisite.RowCount > 1)
             {
-                FormExporter FormExporter = new FormExporter(dgvVisite, idInfirmiere);
-                FormExporter.Show();
+                if (Model.isConnected() == true)
+                {
+                    FormExporter FormExporter = new FormExporter(dgvVisite, idInfirmiere);
+                    FormExporter.Show();
+                }
+                else
+                {
+                    Form404 Form404 = new Form404();
+                    Form404.Show();
+                }
             }
             else
             {
-                Form404 Form404 = new Form404();
-                Form404.Show();
-            }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            dgvVisite.Rows.Clear();
-            var LQuery = Model.maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == Personne.getId())
-                            .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
-            foreach (var v in LQuery)
-            {
-                String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
-                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
-                dgvVisite.Rows.Add(LaVisite);
+                Model.Shake_Form(this);
             }
         }
     }

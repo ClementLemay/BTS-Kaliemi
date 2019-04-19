@@ -62,7 +62,7 @@ namespace InterfaceUser
                 else
                 {
                     lbNotif.ForeColor = Color.Green;
-                    lbNotif.Text = "Données envoyé au serveur";
+                    lbNotif.Text = "Données envoyées au serveur";
                 }
             }
         }

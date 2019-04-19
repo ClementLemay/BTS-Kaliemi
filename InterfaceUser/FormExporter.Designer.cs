@@ -42,9 +42,9 @@
             this.cbParam.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbParam.Location = new System.Drawing.Point(57, 80);
             this.cbParam.Name = "cbParam";
-            this.cbParam.Size = new System.Drawing.Size(134, 23);
+            this.cbParam.Size = new System.Drawing.Size(229, 23);
             this.cbParam.TabIndex = 0;
-            this.cbParam.Text = "Mes paramètres";
+            this.cbParam.Text = "Mes informations personnelles";
             this.cbParam.UseVisualStyleBackColor = true;
             // 
             // cbVisite
