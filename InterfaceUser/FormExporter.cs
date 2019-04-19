@@ -44,7 +44,6 @@ namespace InterfaceUser
                             dgvVisite.Rows.Clear();
                         }
                     }
-
                 }
 
                 if (cbParam.Checked)

@@ -116,6 +116,12 @@
     <Compile Include="convalescence.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form404.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form404.Designer.cs">
+      <DependentUpon>Form404.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjoutSoinVisite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     <Compile Include="visite.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form404.resx">
+      <DependentUpon>Form404.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutSoinVisite.resx">
       <DependentUpon>FormAjoutSoinVisite.cs</DependentUpon>
     </EmbeddedResource>

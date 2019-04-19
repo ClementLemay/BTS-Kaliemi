@@ -58,8 +58,6 @@ namespace InterfaceUser
 
         private void idComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
-
             dgvVisite.Rows.Clear();
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == idInfimiere)
@@ -69,7 +67,10 @@ namespace InterfaceUser
             {
                 string[] LaVisite = { v.id.ToString(), v.patient.ToString(), v.infirmiere.ToString(), v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
-                dateTimePicker1.Value = DateTime.Parse(v.date_prevue.ToString());
+                var dateVisite = DateTime.Parse(v.date_prevue.ToString());
+                dateTimePicker1.Value = dateVisite;
+                tbHeure.Text = dateVisite.Hour.ToString();
+                tbMinute.Text = dateVisite.Minute.ToString();
             }
         }
 

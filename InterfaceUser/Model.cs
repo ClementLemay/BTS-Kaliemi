@@ -382,13 +382,20 @@ namespace InterfaceUser
                     int idVisite = int.Parse(JObjectVisite["id"].ToString());
                     int idPatient = int.Parse(JObjectVisite["patient"].ToString());
                     int idInfirmiere = int.Parse(JObjectVisite["infirmiere"].ToString());
+                    string crInfirmiere = JObjectVisite["compte_rendu_infirmiere"].ToString();
+                    string crPatient = JObjectVisite["compte_rendu_patient"].ToString();
+                    DateTime date_reelle = new DateTime();
+                    if (JObjectVisite["date_reelle"].ToString() != "0000-00-00 00:00:00")
+                    {
+                        date_reelle = Convert.ToDateTime(JObjectVisite["date_reelle"].ToString());
+                    }
                     DateTime date_prevue = new DateTime();
                     date_prevue = Convert.ToDateTime(JObjectVisite["date_prevue"].ToString());
                     int duree = int.Parse(JObjectVisite["duree"].ToString());
 
                     importPersonne(idPatient);
                     insertPatient(idPatient, idInfirmiere);
-                    insertVisite(idVisite, idPatient, idInfirmiere, date_prevue, duree);
+                    insertVisite(idVisite, idPatient, idInfirmiere, date_prevue, date_reelle, duree, crInfirmiere, crPatient);
                     importSoinsVisite(idVisite);
                 }
             }
@@ -457,7 +464,7 @@ namespace InterfaceUser
                 request.Accept = "Accept=application/json";
                 request.SendChunked = false;
                 request.ContentLength = serializedObject.Length;
-                request.Timeout = 2500;
+                request.Timeout = 300;
                 using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {
                     streamWriter.Write(serializedObject);
@@ -498,7 +505,7 @@ namespace InterfaceUser
                     maConnexion.personne.Add(newPersonne);
                     maConnexion.SaveChanges();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     //System.Windows.Forms.MessageBox.Show(ex.InnerException.Message + " PERSONNE ");
                     maConnexion.Dispose();
@@ -520,7 +527,7 @@ namespace InterfaceUser
                 maConnexion.personne_login.Add(newLogin);
                 maConnexion.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 maConnexion.Dispose();
                 init();
@@ -540,7 +547,7 @@ namespace InterfaceUser
                 maConnexion.infirmiere.Add(newInfirmiere);
                 maConnexion.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 maConnexion.Dispose();
                 init();
@@ -576,7 +583,7 @@ namespace InterfaceUser
             return vretour;
         }
 
-        public static bool insertVisite(int idVisiste, int idPatient, int idInfirmiere, DateTime date_prevue, int duree)
+        public static bool insertVisite(int idVisiste, int idPatient, int idInfirmiere, DateTime date_prevue, DateTime date_reelle, int duree, string crInfirmiere ,string crPatient)
         {
             bool vretour = false;
             try
@@ -586,7 +593,14 @@ namespace InterfaceUser
                 newVisite.infirmiere = idInfirmiere;
                 newVisite.date_prevue = date_prevue;
                 newVisite.duree = duree;
+                newVisite.compte_rendu_infirmiere = crInfirmiere;
+                newVisite.compte_rendu_patient = crPatient;
                 newVisite.id = idVisiste;
+
+                if(date_reelle.ToString() != "01/01/0001 00:00:00")
+                {
+                    newVisite.date_reelle = date_reelle;
+                }
 
                 maConnexion.visite.Add(newVisite);
                 maConnexion.SaveChanges();
@@ -767,6 +781,24 @@ namespace InterfaceUser
             dep.nb_tentative_erreur = vretour + 1;
             Model.maConnexion.SaveChanges();
 
+            return vretour;
+        }
+
+        public static bool isConnected()
+        {
+            bool vretour = false;
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    vretour=true;
+                }
+            }
+            catch
+            {
+                vretour=false;
+            }
             return vretour;
         }
 

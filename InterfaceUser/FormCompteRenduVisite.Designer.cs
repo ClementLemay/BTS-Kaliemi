@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompteRenduVisite));
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvVisite = new System.Windows.Forms.DataGridView();
+            this.idVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompteRenduInfi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbNotif = new System.Windows.Forms.Label();
             this.idComboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -44,13 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.idVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idInfirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_prevue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_reelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompteRenduInfi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,45 @@
             this.dgvVisite.RowHeadersWidth = 4;
             this.dgvVisite.Size = new System.Drawing.Size(552, 376);
             this.dgvVisite.TabIndex = 1;
+            // 
+            // idVisite
+            // 
+            this.idVisite.HeaderText = "idVisite";
+            this.idVisite.Name = "idVisite";
+            // 
+            // idPatient
+            // 
+            this.idPatient.HeaderText = "idPatient";
+            this.idPatient.Name = "idPatient";
+            // 
+            // idInfirmiere
+            // 
+            this.idInfirmiere.HeaderText = "idInfirmiere";
+            this.idInfirmiere.Name = "idInfirmiere";
+            // 
+            // date_prevue
+            // 
+            this.date_prevue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_prevue.HeaderText = "date_prevue";
+            this.date_prevue.Name = "date_prevue";
+            this.date_prevue.Width = 92;
+            // 
+            // date_reelle
+            // 
+            this.date_reelle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_reelle.HeaderText = "date_reelle";
+            this.date_reelle.Name = "date_reelle";
+            this.date_reelle.Width = 84;
+            // 
+            // Duree
+            // 
+            this.Duree.HeaderText = "Duree";
+            this.Duree.Name = "Duree";
+            // 
+            // CompteRenduInfi
+            // 
+            this.CompteRenduInfi.HeaderText = "CompteRenduInfi";
+            this.CompteRenduInfi.Name = "CompteRenduInfi";
             // 
             // lbNotif
             // 
@@ -125,6 +164,7 @@
             this.tbHeure.Name = "tbHeure";
             this.tbHeure.Size = new System.Drawing.Size(45, 27);
             this.tbHeure.TabIndex = 2;
+            this.tbHeure.Text = "12";
             this.tbHeure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbMinute
@@ -135,6 +175,7 @@
             this.tbMinute.Name = "tbMinute";
             this.tbMinute.Size = new System.Drawing.Size(45, 27);
             this.tbMinute.TabIndex = 3;
+            this.tbMinute.Text = "00";
             this.tbMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbCompteRendu
@@ -222,45 +263,6 @@
             this.label5.Size = new System.Drawing.Size(19, 29);
             this.label5.TabIndex = 9;
             this.label5.Text = ":";
-            // 
-            // idVisite
-            // 
-            this.idVisite.HeaderText = "idVisite";
-            this.idVisite.Name = "idVisite";
-            // 
-            // idPatient
-            // 
-            this.idPatient.HeaderText = "idPatient";
-            this.idPatient.Name = "idPatient";
-            // 
-            // idInfirmiere
-            // 
-            this.idInfirmiere.HeaderText = "idInfirmiere";
-            this.idInfirmiere.Name = "idInfirmiere";
-            // 
-            // date_prevue
-            // 
-            this.date_prevue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_prevue.HeaderText = "date_prevue";
-            this.date_prevue.Name = "date_prevue";
-            this.date_prevue.Width = 92;
-            // 
-            // date_reelle
-            // 
-            this.date_reelle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_reelle.HeaderText = "date_reelle";
-            this.date_reelle.Name = "date_reelle";
-            this.date_reelle.Width = 84;
-            // 
-            // Duree
-            // 
-            this.Duree.HeaderText = "Duree";
-            this.Duree.Name = "Duree";
-            // 
-            // CompteRenduInfi
-            // 
-            this.CompteRenduInfi.HeaderText = "CompteRenduInfi";
-            this.CompteRenduInfi.Name = "CompteRenduInfi";
             // 
             // FormCompteRenduVisite
             // 

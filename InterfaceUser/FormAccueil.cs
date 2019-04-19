@@ -6,7 +6,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,45 +45,28 @@ namespace InterfaceUser
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            /*
-            Thread userThread = new Thread(new ThreadStart(dot));
-            userThread.Start();
-            */
             pictureBox1.Visible = true;
-            dgvVisite.Rows.Clear();
-            Model.ImportVisite(Personne.getId());
-            var LQuery = Model.maConnexion.visite.ToList()
-                            .Where(x => x.infirmiere == Personne.getId())
-                            .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
-            foreach (var v in LQuery)
+            if (Model.isConnected()== true)
             {
-                String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
-                string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
-                dgvVisite.Rows.Add(LaVisite);
-            }
-            /*userThread.Abort();
-             */
-            pictureBox1.Visible = false;
-        }
-        /*
-        private  void doSomeWork()
-        {
-            if (pictureBox1.InvokeRequired)
-            {
-                var d = new SafeCallDelegate(doSomeWork);
-                Invoke(d);
+                dgvVisite.Rows.Clear();
+                Model.ImportVisite(Personne.getId());
+                var LQuery = Model.maConnexion.visite.ToList()
+                                .Where(x => x.infirmiere == Personne.getId())
+                                .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
+                foreach (var v in LQuery)
+                {
+                    String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
+                    string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
+                    dgvVisite.Rows.Add(LaVisite);
+                }
             }
             else
             {
-                pictureBox1.Visible = true;
+                Form404 Form404 = new Form404();
+                Form404.Show();
             }
-           
+            pictureBox1.Visible = false;
         }
-        private void dot()
-        {
-            doSomeWork();
-        }
-        */
         private void button2_Click(object sender, EventArgs e)
         {
             FormAjoutSoinVisite FormAjoutSoinVisite = new FormAjoutSoinVisite(Personne.getId());
@@ -117,8 +99,16 @@ namespace InterfaceUser
 
         private void btExporter_Click(object sender, EventArgs e)
         {
-            FormExporter FormExporter = new FormExporter(dgvVisite, idInfirmiere);
-            FormExporter.Show();
+            if (Model.isConnected() == true)
+            {
+                FormExporter FormExporter = new FormExporter(dgvVisite, idInfirmiere);
+                FormExporter.Show();
+            }
+            else
+            {
+                Form404 Form404 = new Form404();
+                Form404.Show();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

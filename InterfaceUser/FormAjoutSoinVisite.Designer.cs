@@ -234,7 +234,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAjoutSoinVisite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajout soin visite";
+            this.Text = "Ajout soins";
             this.Load += new System.EventHandler(this.FormAjoutSoinVisite_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).EndInit();
