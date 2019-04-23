@@ -53,9 +53,9 @@
             this.cbVisite.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVisite.Location = new System.Drawing.Point(57, 118);
             this.cbVisite.Name = "cbVisite";
-            this.cbVisite.Size = new System.Drawing.Size(233, 23);
+            this.cbVisite.Size = new System.Drawing.Size(240, 23);
             this.cbVisite.TabIndex = 1;
-            this.cbVisite.Text = "Changements relatifs aux visite";
+            this.cbVisite.Text = "Changements relatifs aux visites";
             this.cbVisite.UseVisualStyleBackColor = true;
             // 
             // button1
