@@ -128,6 +128,12 @@
     <Compile Include="FormAjoutSoinVisite.Designer.cs">
       <DependentUpon>FormAjoutSoinVisite.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCalendrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalendrier.Designer.cs">
+      <DependentUpon>FormCalendrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCarte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutSoinVisite.resx">
       <DependentUpon>FormAjoutSoinVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalendrier.resx">
+      <DependentUpon>FormCalendrier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCarte.resx">
       <DependentUpon>FormCarte.cs</DependentUpon>

@@ -37,20 +37,21 @@
             this.duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compte_rendu_infirmiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbBienvenue1 = new System.Windows.Forms.Label();
             this.btParam = new System.Windows.Forms.Button();
             this.btDeconnexion = new System.Windows.Forms.Button();
             this.btAjouterCR = new System.Windows.Forms.Button();
             this.btLocalisation = new System.Windows.Forms.Button();
+            this.btAjouterSV = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btExporter = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.btAjouterSV = new System.Windows.Forms.Button();
+            this.btnAgenda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVisite
@@ -136,18 +137,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(647, 334);
             this.panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(643, 330);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // panel3
             // 
@@ -242,6 +231,34 @@
             this.btLocalisation.UseVisualStyleBackColor = true;
             this.btLocalisation.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btAjouterSV
+            // 
+            this.btAjouterSV.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btAjouterSV.FlatAppearance.BorderSize = 0;
+            this.btAjouterSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btAjouterSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btAjouterSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAjouterSV.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterSV.Location = new System.Drawing.Point(-5, 102);
+            this.btAjouterSV.Name = "btAjouterSV";
+            this.btAjouterSV.Size = new System.Drawing.Size(182, 45);
+            this.btAjouterSV.TabIndex = 9;
+            this.btAjouterSV.Text = "Ajouter un SoinsVisite";
+            this.btAjouterSV.UseVisualStyleBackColor = true;
+            this.btAjouterSV.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(643, 330);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // btExporter
             // 
             this.btExporter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -279,21 +296,21 @@
             this.button6.UseWaitCursor = true;
             this.button6.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // btAjouterSV
+            // btnAgenda
             // 
-            this.btAjouterSV.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btAjouterSV.FlatAppearance.BorderSize = 0;
-            this.btAjouterSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btAjouterSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btAjouterSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAjouterSV.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouterSV.Location = new System.Drawing.Point(-5, 102);
-            this.btAjouterSV.Name = "btAjouterSV";
-            this.btAjouterSV.Size = new System.Drawing.Size(182, 45);
-            this.btAjouterSV.TabIndex = 9;
-            this.btAjouterSV.Text = "Ajouter un SoinsVisite";
-            this.btAjouterSV.UseVisualStyleBackColor = true;
-            this.btAjouterSV.Click += new System.EventHandler(this.button2_Click);
+            this.btnAgenda.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgenda.FlatAppearance.BorderSize = 0;
+            this.btnAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgenda.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgenda.Location = new System.Drawing.Point(-6, 189);
+            this.btnAgenda.Name = "btnAgenda";
+            this.btnAgenda.Size = new System.Drawing.Size(182, 45);
+            this.btnAgenda.TabIndex = 10;
+            this.btnAgenda.Text = "Mon agenda";
+            this.btnAgenda.UseVisualStyleBackColor = true;
+            this.btnAgenda.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormAccueil
             // 
@@ -306,6 +323,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btLocalisation);
             this.Controls.Add(this.btAjouterCR);
+            this.Controls.Add(this.btnAgenda);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,9 +331,9 @@
             this.Load += new System.EventHandler(this.FormAccueil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisite)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +374,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_reelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn compte_rendu_infirmiere;
+        private System.Windows.Forms.Button btnAgenda;
     }
 }

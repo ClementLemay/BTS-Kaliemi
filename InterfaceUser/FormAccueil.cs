@@ -18,6 +18,7 @@ namespace InterfaceUser
         ClassPersonne Personne;
         int idInfirmiere;
         Form FormConnexion = new FormConnexion();
+        List<DateTime> listeDate = new List<DateTime>();
 
         public FormAccueil(int unId)
         {
@@ -30,13 +31,14 @@ namespace InterfaceUser
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+            listeDate.Clear();
             lbBienvenue1.Text = "Bienvenue " +  Personne.getNom()+ " " + Personne.getPrenom();
-
             var LQuery = Model.maConnexion.visite.ToList()
                             .Where(x => x.infirmiere == Personne.getId())
                             .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
             foreach (var v in LQuery)
             {
+                listeDate.Add(v.date_prevue);
                 String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
                 string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                 dgvVisite.Rows.Add(LaVisite);
@@ -45,6 +47,7 @@ namespace InterfaceUser
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            listeDate.Clear();
             pictureBox1.Visible = true;
             if (Model.isConnected()== true)
             {
@@ -55,6 +58,7 @@ namespace InterfaceUser
                                 .Select(x => new { x.id, x.patient, x.date_prevue, x.date_reelle, x.duree, x.compte_rendu_infirmiere });
                 foreach (var v in LQuery)
                 {
+                    listeDate.Add(v.date_prevue);
                     String NomPrenomPatient = Model.GetNomPersonneFromId(v.patient) + " " + Model.GetPrenomPersonneFromId(v.patient);
                     string[] LaVisite = { v.id.ToString(), NomPrenomPatient, v.date_prevue.ToString(), v.date_reelle.ToString(), v.duree.ToString(), v.compte_rendu_infirmiere };
                     dgvVisite.Rows.Add(LaVisite);
@@ -96,7 +100,11 @@ namespace InterfaceUser
         {
             Form FormParamètre = new FormParamètre(Personne.getId(), this);
             FormParamètre.ShowDialog();
-
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FormCalendrier FormCalendrier = new FormCalendrier(listeDate);
+            FormCalendrier.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
