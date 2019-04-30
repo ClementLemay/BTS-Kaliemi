@@ -276,7 +276,6 @@
             this.button6.TabIndex = 7;
             this.button6.Text = "Importer";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.UseWaitCursor = true;
             this.button6.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btAjouterSV
